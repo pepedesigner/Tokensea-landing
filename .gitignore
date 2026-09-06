@@ -1,0 +1,22 @@
+# Dependencies
+node_modules
+
+# Build output
+dist
+
+# Vercel
+.vercel
+
+# Local tooling / sessions
+.commandcode
+
+# OS junk
+.DS_Store
+*.log
+
+# Duplicate raw video (kept only as public/BG.mp4)
+/2. .mp4
+
+# HyperFrames render output
+promo/renders
+promo/.hyperframes
