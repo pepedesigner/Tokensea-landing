@@ -1,0 +1,103 @@
+[span] TokenSea
+[a] How it works
+[a] Start selling
+[a] Sign In
+[span] AI surplus marketplace
+[span] Sell
+[span] your
+[span] spare
+[span] tokens
+[span] for cash.
+[p] List unused AI API credits or included capacity on the TokenSea market. Earn USD when buyers use your models, then cash out to Revolut, Zelle, PayPal, and more.
+[span] Market
+[span] 396
+[span] Models listed
+[span] 1.4M
+[span] Requests / 24h
+[span] $2,867.24
+[span] Paid out / 24h
+[a] Start selling
+[a] See what's paying
+[span] Scroll
+[span] Why sell on TokenSea
+[h2] Idle AI capacity should
+[span] make you money.
+[h3] Sell what you already pay for
+[p] Turn unused API credits or included subscription capacity into USD every time a buyer hits your listing.
+[h3] Encrypted per listing
+[p] Your key is held only to serve your listing, encrypted, and never kept on file after it ends.
+[h3] Autopilot pricing
+[p] We price your listing to win demand. Set an optional minimum — Autopilot never goes below it.
+[h3] Automatic payouts
+[p] Earn per request. USD batches to your wallet at $5 or after 72 hours, then cash out to the account you choose.
+[span] glm-5.3
+[span] claude-opus-5
+[span] gpt-5.6-sol
+[span] kimi-k3
+[span] claude-fable-5
+[span] glm-5.1
+[span] gpt-6-astra
+[span] glm-5.2
+[span] USD payouts
+[span] Autopilot pricing
+[span] Encrypted listings
+[span] No custody of keys
+[span] glm-5.3
+[span] claude-opus-5
+[span] gpt-5.6-sol
+[span] kimi-k3
+[span] claude-fable-5
+[span] glm-5.1
+[span] gpt-6-astra
+[span] glm-5.2
+[span] USD payouts
+[span] Autopilot pricing
+[span] Encrypted listings
+[span] No custody of keys
+[span] MARKET
+[div] glm-5.3
+[div] claude-opus-5
+[div] gpt-5.6-sol
+[div] kimi-k3
+[div] claude-fable-5
+[div] earning USD
+[span] What's paying
+[h2] Live model demand.
+[span] See what buyers are using.
+[a] Explore the market
+[th] Model
+[th] Wins at / 1M
+[th] 24h volume
+[th] Est. payout
+[span] How it works
+[h2] From idle key to income in
+[span] three steps.
+[h3] Connect a key
+[p] TokenSea probes it to confirm it works. We never keep a copy of your key.
+[h3] Autopilot pricing
+[p] We price your listing to win demand. Set a minimum only if you want one — Autopilot never goes below it.
+[h3] Paid automatically
+[p] Earn per request. TokenSea batches USD to your wallet at $5 or after 72 hours, then you cash out.
+[span] Cash out to
+[span] Revolut
+[span] Monzo
+[span] Chime
+[span] Zelle
+[span] Venmo
+[span] Cash App
+[span] Wise
+[span] PayPal
+[span] Start selling
+[h2] Turn idle AI capacity into
+[span] income.
+[p] Connect a key in minutes, let Autopilot price your listing, and start earning USD the moment buyers use your models.
+[a] Start selling
+[a] Read the docs
+[span] TokenSea
+[p] Sell your spare AI tokens for cash.
+[a] What's paying
+[a] Model prices
+[a] Sell your credits
+[span] Resources
+[a] How it works
+[a] hello@tokensea.world

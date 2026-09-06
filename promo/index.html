@@ -453,6 +453,106 @@
         letter-spacing: 0.02em;
       }
 
+      /* ============ SCENE 1 — live website preview ============ */
+      #scene1 {
+        background: linear-gradient(160deg, #eceaf4 0%, #f2f2ee 50%, #e9f4f1 100%);
+        display: flex;
+        align-items: center;
+      }
+      #s1-inner {
+        width: 1680px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 60px;
+      }
+      #s1-copy {
+        flex: 0 0 430px;
+      }
+      #s1-label {
+        margin-bottom: 24px;
+      }
+      #s1-h {
+        font-size: 56px;
+        font-weight: 800;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        color: #192837;
+        margin-bottom: 20px;
+      }
+      #s1-h .grad {
+        background-image: linear-gradient(90deg, #7342e2, #9b6bff);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      #s1-sub {
+        font-size: 26px;
+        line-height: 1.5;
+        opacity: 0.75;
+        color: #192837;
+      }
+      /* browser mock */
+      #browser {
+        flex: 1 1 auto;
+        background: #ffffff;
+        border-radius: 22px;
+        overflow: hidden;
+        box-shadow: 0 30px 80px rgba(25, 40, 55, 0.22), 0 4px 16px rgba(25, 40, 55, 0.08);
+        border: 1px solid rgba(25, 40, 55, 0.08);
+        position: relative;
+      }
+      #browser-bar {
+        height: 54px;
+        background: #f7f6f2;
+        border-bottom: 1px solid rgba(25, 40, 55, 0.08);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 0 18px;
+      }
+      #browser-bar .dot {
+        width: 13px;
+        height: 13px;
+        border-radius: 999px;
+        display: inline-block;
+      }
+      #browser-url {
+        flex: 1;
+        margin-left: 10px;
+        background: #ecebe6;
+        border-radius: 999px;
+        padding: 8px 18px;
+        font-size: 18px;
+        font-weight: 500;
+        color: rgba(25, 40, 55, 0.8);
+        font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+      }
+      #browser-viewport {
+        position: relative;
+        overflow: hidden;
+        height: 600px;
+        background: #f2f2ee;
+      }
+      #webpage {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        will-change: transform;
+      }
+      #webpage img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+      #web-glow {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: radial-gradient(ellipse 50% 40% at 50% 30%, transparent 40%, rgba(115,66,226,0.08) 100%);
+      }
+
       /* scene fade overlays */
       .wipe {
         position: absolute;
@@ -505,43 +605,36 @@
         <div data-hf-id="hf-7blk" id="s0-wipe" class="wipe" style="background:#f2f2ee;"></div>
       </section>
 
-      <!-- ============ SCENE 1 — market ============ -->
+      <!-- ============ SCENE 1 — live website preview ============ -->
       <section data-hf-id="hf-upoi" id="scene1" class="clip" data-start="5.2" data-duration="6">
         <div data-hf-id="hf-kfwi" id="s1-inner">
-          <div data-hf-id="hf-ihdk" id="s1-head">
+          <div data-hf-id="hf-ihdk" id="s1-copy">
             <span data-hf-id="hf-c606" id="s1-label" class="section-label">
               <span data-hf-id="hf-y6n2" class="pill-dot"></span>
-              What's paying
+              Live at tokensea.world
             </span>
             <div data-hf-id="hf-ykw5" id="s1-h">
-              Your idle capacity is
-              <span data-hf-id="hf-6wmd" class="grad">real money.</span>
+              One listing.
+              <span data-hf-id="hf-6wmd" class="grad">Real demand.</span>
+            </div>
+            <div data-hf-id="hf-oi3p" id="s1-sub">
+              List once and let the market find your capacity —
+              buyers pay per request, all day.
             </div>
           </div>
-          <div data-hf-id="hf-u5rz" id="s1-stats">
-            <div data-hf-id="hf-9rhj" class="stat" id="stat1">
-              <div data-hf-id="hf-c744" class="icon">📦</div>
-              <div data-hf-id="hf-yeow">
-                <span data-hf-id="hf-qe2d" class="num" id="stat1-num">0</span>
-                <span data-hf-id="hf-n2wp" class="usd">models</span>
-              </div>
-              <div data-hf-id="hf-zjll" class="k">live on the market right now</div>
+
+          <div data-hf-id="hf-u5rz" id="browser">
+            <div data-hf-id="hf-9rhj" id="browser-bar">
+              <span class="dot" style="background:#ff5f57"></span>
+              <span class="dot" style="background:#febc2e"></span>
+              <span class="dot" style="background:#28c840"></span>
+              <span data-hf-id="hf-qe2d" id="browser-url">tokensea.world</span>
             </div>
-            <div data-hf-id="hf-yvzw" class="stat" id="stat2">
-              <div data-hf-id="hf-ov9y" class="icon">⚡</div>
-              <div data-hf-id="hf-y7yw">
-                <span data-hf-id="hf-hg58" class="num teal" id="stat2-num">$0</span>
-                <span data-hf-id="hf-17fl" class="usd">paid out</span>
+            <div data-hf-id="hf-n2wp" id="browser-viewport">
+              <div data-hf-id="hf-zjll" id="webpage" data-layout-allow-overflow>
+                <img data-hf-id="hf-c744" src="assets/web-page-tall.png" alt="TokenSea website" />
               </div>
-              <div data-hf-id="hf-0suc" class="k">to sellers in the last 24h</div>
-            </div>
-            <div data-hf-id="hf-znnp" class="stat" id="stat3">
-              <div data-hf-id="hf-0way" class="icon">🔄</div>
-              <div data-hf-id="hf-x11t">
-                <span data-hf-id="hf-16rj" class="num" id="stat3-num">0</span>
-                <span data-hf-id="hf-nrpp" class="usd">requests</span>
-              </div>
-              <div data-hf-id="hf-r393" class="k">served through the market / 24h</div>
+              <div data-hf-id="hf-ov9y" id="web-glow"></div>
             </div>
           </div>
         </div>
@@ -629,32 +722,6 @@
       const easeOut = "power3.out";
       const easeInOut = "power2.inOut";
 
-      // count-up helper (deterministic, seek-safe: driven by onUpdate on the tween)
-      // mode: "int" → locale thousands; "usd" → $ + thousands; "millions" → 1.4M style
-      function countTo(target, from, to, at, dur, mode) {
-        const obj = { v: from };
-        tl.to(
-          obj,
-          {
-            v: to,
-            duration: dur,
-            ease: "power2.out",
-            onUpdate: function () {
-              const v = obj.v;
-              if (mode === "usd") {
-                target.textContent = "$" + Math.round(v).toLocaleString("en-US");
-              } else if (mode === "millions") {
-                target.textContent =
-                  (v / 1000000).toFixed(1).replace(/\.0$/, "") + "M";
-              } else {
-                target.textContent = Math.round(v).toLocaleString("en-US");
-              }
-            },
-          },
-          at
-        );
-      }
-
       // ============================================================
       // Timeline. Scene clips overlap slightly; each scene is gated by
       // its clip window (hard hide outside) and faded by GSAP inside it.
@@ -676,16 +743,22 @@
       // hold hero, then fade out before clip ends (clip ends 5.8)
       tl.to("#scene0", { autoAlpha: 0, duration: 0.4, ease: easeInOut }, 5.3);
 
-      // ---------- SCENE 1 (5.2 → 11.2) ----------
+      // ---------- SCENE 1 — live website preview (5.2 → 11.2) ----------
       tl.to("#scene1", { autoAlpha: 1, duration: 0.35, ease: easeInOut }, 5.35);
       tl.from("#s1-label", { y: 24, autoAlpha: 0, duration: 0.5, ease: easeOut }, 5.6);
       tl.from("#s1-h", { y: 36, autoAlpha: 0, duration: 0.6, ease: easeOut }, 5.8);
-      tl.from(".stat", { y: 44, autoAlpha: 0, scale: 0.94, duration: 0.55, stagger: 0.12, ease: easeOut }, 6.3);
+      tl.from("#s1-sub", { y: 24, autoAlpha: 0, duration: 0.5, ease: easeOut }, 6.1);
 
-      // count-ups (start after cards land)
-      countTo(document.getElementById("stat1-num"), 0, 396, 7.0, 1.0, "int");
-      countTo(document.getElementById("stat2-num"), 0, 2867, 7.0, 1.2, "usd");
-      countTo(document.getElementById("stat3-num"), 0, 1400000, 7.0, 1.2, "millions");
+      // browser rises in
+      tl.from("#browser", { y: 90, autoAlpha: 0, scale: 0.96, duration: 0.7, ease: easeOut }, 5.7);
+
+      // the real page scrolls inside the browser viewport
+      tl.fromTo(
+        "#webpage",
+        { y: 0 },
+        { y: -680, duration: 3.0, ease: "power1.inOut" },
+        6.4
+      );
 
       tl.to("#scene1", { autoAlpha: 0, duration: 0.4, ease: easeInOut }, 10.7);
 

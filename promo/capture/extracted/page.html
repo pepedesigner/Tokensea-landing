@@ -1,0 +1,2071 @@
+<!doctype html>
+<html lang="en">
+<head>
+<style type="text/css" data-vite-dev-id="/Users/qumo/Documents/Others/Tokensea/src/index.css">/*! tailwindcss v4.3.3 | MIT License | https://tailwindcss.com */
+@layer properties;
+@layer theme, base, components, utilities;
+@layer theme {
+  :root, :host {
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+      "Noto Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol", "Noto Color Emoji";
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+      "Courier New", monospace;
+    --color-white: #fff;
+    --spacing: 0.25rem;
+    --text-xs: 0.75rem;
+    --text-xs--line-height: calc(1 / 0.75);
+    --text-sm: 0.875rem;
+    --text-sm--line-height: calc(1.25 / 0.875);
+    --text-base: 1rem;
+    --text-base--line-height: calc(1.5 / 1);
+    --text-lg: 1.125rem;
+    --text-lg--line-height: calc(1.75 / 1.125);
+    --text-xl: 1.25rem;
+    --text-xl--line-height: calc(1.75 / 1.25);
+    --text-2xl: 1.5rem;
+    --text-2xl--line-height: calc(2 / 1.5);
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --tracking-tight: -0.025em;
+    --tracking-wide: 0.025em;
+    --tracking-widest: 0.1em;
+    --leading-relaxed: 1.625;
+    --radius-lg: 0.5rem;
+    --radius-xl: 0.75rem;
+    --radius-2xl: 1rem;
+    --radius-3xl: 1.5rem;
+    --blur-sm: 8px;
+    --blur-md: 12px;
+    --default-transition-duration: 150ms;
+    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    --default-font-family: var(--font-sans);
+    --default-mono-font-family: var(--font-mono);
+  }
+}
+@layer base {
+  *, ::after, ::before, ::backdrop, ::file-selector-button {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0 solid;
+  }
+  html, :host {
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    tab-size: 4;
+    font-family: var(--default-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
+    font-feature-settings: var(--default-font-feature-settings, normal);
+    font-variation-settings: var(--default-font-variation-settings, normal);
+    -webkit-tap-highlight-color: transparent;
+  }
+  hr {
+    height: 0;
+    color: inherit;
+    border-top-width: 1px;
+  }
+  abbr:where([title]) {
+    -webkit-text-decoration: underline dotted;
+    text-decoration: underline dotted;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+  a {
+    color: inherit;
+    -webkit-text-decoration: inherit;
+    text-decoration: inherit;
+  }
+  b, strong {
+    font-weight: bolder;
+  }
+  code, kbd, samp, pre {
+    font-family: var(--default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace);
+    font-feature-settings: var(--default-mono-font-feature-settings, normal);
+    font-variation-settings: var(--default-mono-font-variation-settings, normal);
+    font-size: 1em;
+  }
+  small {
+    font-size: 80%;
+  }
+  sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  sub {
+    bottom: -0.25em;
+  }
+  sup {
+    top: -0.5em;
+  }
+  table {
+    text-indent: 0;
+    border-color: inherit;
+    border-collapse: collapse;
+  }
+  :-moz-focusring:where(:not(iframe)) {
+    outline: auto;
+  }
+  progress {
+    vertical-align: baseline;
+  }
+  summary {
+    display: list-item;
+  }
+  ol, ul, menu {
+    list-style: none;
+  }
+  img, svg, video, canvas, audio, iframe, embed, object {
+    display: block;
+    vertical-align: middle;
+  }
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+  button, input, select, optgroup, textarea, ::file-selector-button {
+    font: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    border-radius: 0;
+    background-color: transparent;
+    opacity: 1;
+  }
+  :where(select:is([multiple], [size])) optgroup {
+    font-weight: bolder;
+  }
+  :where(select:is([multiple], [size])) optgroup option {
+    padding-inline-start: 20px;
+  }
+  ::file-selector-button {
+    margin-inline-end: 4px;
+  }
+  ::placeholder {
+    opacity: 1;
+  }
+  @supports (not (-webkit-appearance: -apple-pay-button))  or (contain-intrinsic-size: 1px) {
+    ::placeholder {
+      color: currentcolor;
+      @supports (color: color-mix(in lab, red, red)) {
+        color: color-mix(in oklab, currentcolor 50%, transparent);
+      }
+    }
+  }
+  textarea {
+    resize: vertical;
+  }
+  ::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+  ::-webkit-date-and-time-value {
+    min-height: 1lh;
+    text-align: inherit;
+  }
+  ::-webkit-datetime-edit {
+    display: inline-flex;
+  }
+  ::-webkit-datetime-edit-fields-wrapper {
+    padding: 0;
+  }
+  ::-webkit-datetime-edit, ::-webkit-datetime-edit-year-field, ::-webkit-datetime-edit-month-field, ::-webkit-datetime-edit-day-field, ::-webkit-datetime-edit-hour-field, ::-webkit-datetime-edit-minute-field, ::-webkit-datetime-edit-second-field, ::-webkit-datetime-edit-millisecond-field, ::-webkit-datetime-edit-meridiem-field {
+    padding-block: 0;
+  }
+  ::-webkit-calendar-picker-indicator {
+    line-height: 1;
+  }
+  :-moz-ui-invalid {
+    box-shadow: none;
+  }
+  button, input:where([type="button"], [type="reset"], [type="submit"]), ::file-selector-button {
+    appearance: button;
+  }
+  ::-webkit-inner-spin-button, ::-webkit-outer-spin-button {
+    height: auto;
+  }
+  [hidden]:where(:not([hidden="until-found"])) {
+    display: none !important;
+  }
+}
+@layer utilities {
+  .pointer-events-none {
+    pointer-events: none;
+  }
+  .absolute {
+    position: absolute;
+  }
+  .fixed {
+    position: fixed;
+  }
+  .relative {
+    position: relative;
+  }
+  .static {
+    position: static;
+  }
+  .inset-0 {
+    inset: 0px;
+  }
+  .inset-y-0 {
+    inset-block: 0px;
+  }
+  .-top-3 {
+    top: calc(var(--spacing) * -3);
+  }
+  .-top-20 {
+    top: calc(var(--spacing) * -20);
+  }
+  .-top-24 {
+    top: calc(var(--spacing) * -24);
+  }
+  .-top-32 {
+    top: calc(var(--spacing) * -32);
+  }
+  .top-0 {
+    top: 0px;
+  }
+  .top-1\/2 {
+    top: calc(1 / 2 * 100%);
+  }
+  .top-\[12\%\] {
+    top: 12%;
+  }
+  .top-\[16\%\] {
+    top: 16%;
+  }
+  .top-\[22\%\] {
+    top: 22%;
+  }
+  .top-\[24\%\] {
+    top: 24%;
+  }
+  .top-\[30\%\] {
+    top: 30%;
+  }
+  .top-\[38\%\] {
+    top: 38%;
+  }
+  .top-\[46\%\] {
+    top: 46%;
+  }
+  .top-\[58\%\] {
+    top: 58%;
+  }
+  .top-\[70\%\] {
+    top: 70%;
+  }
+  .-right-24 {
+    right: calc(var(--spacing) * -24);
+  }
+  .right-0 {
+    right: 0px;
+  }
+  .right-3 {
+    right: calc(var(--spacing) * 3);
+  }
+  .right-\[-8rem\] {
+    right: -8rem;
+  }
+  .right-\[-10rem\] {
+    right: -10rem;
+  }
+  .right-\[-12rem\] {
+    right: -12rem;
+  }
+  .right-\[4\%\] {
+    right: 4%;
+  }
+  .right-\[8\%\] {
+    right: 8%;
+  }
+  .right-\[12\%\] {
+    right: 12%;
+  }
+  .right-\[16\%\] {
+    right: 16%;
+  }
+  .right-\[24\%\] {
+    right: 24%;
+  }
+  .right-\[30\%\] {
+    right: 30%;
+  }
+  .-bottom-28 {
+    bottom: calc(var(--spacing) * -28);
+  }
+  .bottom-8 {
+    bottom: calc(var(--spacing) * 8);
+  }
+  .bottom-\[-6rem\] {
+    bottom: -6rem;
+  }
+  .bottom-\[14\%\] {
+    bottom: 14%;
+  }
+  .bottom-\[16\%\] {
+    bottom: 16%;
+  }
+  .bottom-\[22\%\] {
+    bottom: 22%;
+  }
+  .bottom-\[30\%\] {
+    bottom: 30%;
+  }
+  .-left-24 {
+    left: calc(var(--spacing) * -24);
+  }
+  .left-0 {
+    left: 0px;
+  }
+  .left-1\/2 {
+    left: calc(1 / 2 * 100%);
+  }
+  .left-\[-10rem\] {
+    left: -10rem;
+  }
+  .left-\[-12rem\] {
+    left: -12rem;
+  }
+  .left-\[4\%\] {
+    left: 4%;
+  }
+  .left-\[6\%\] {
+    left: 6%;
+  }
+  .left-\[10\%\] {
+    left: 10%;
+  }
+  .left-\[12\%\] {
+    left: 12%;
+  }
+  .left-\[18\%\] {
+    left: 18%;
+  }
+  .left-\[24\%\] {
+    left: 24%;
+  }
+  .left-\[30\%\] {
+    left: 30%;
+  }
+  .z-10 {
+    z-index: 10;
+  }
+  .z-40 {
+    z-index: 40;
+  }
+  .z-50 {
+    z-index: 50;
+  }
+  .z-\[60\] {
+    z-index: 60;
+  }
+  .col-span-2 {
+    grid-column: span 2 / span 2;
+  }
+  .mx-6 {
+    margin-inline: calc(var(--spacing) * 6);
+  }
+  .mx-auto {
+    margin-inline: auto;
+  }
+  .mt-0\.5 {
+    margin-top: calc(var(--spacing) * 0.5);
+  }
+  .mt-1 {
+    margin-top: var(--spacing);
+  }
+  .mt-1\.5 {
+    margin-top: calc(var(--spacing) * 1.5);
+  }
+  .mt-2 {
+    margin-top: calc(var(--spacing) * 2);
+  }
+  .mt-4 {
+    margin-top: calc(var(--spacing) * 4);
+  }
+  .mt-5 {
+    margin-top: calc(var(--spacing) * 5);
+  }
+  .mt-6 {
+    margin-top: calc(var(--spacing) * 6);
+  }
+  .mt-7 {
+    margin-top: calc(var(--spacing) * 7);
+  }
+  .mt-8 {
+    margin-top: calc(var(--spacing) * 8);
+  }
+  .mt-10 {
+    margin-top: calc(var(--spacing) * 10);
+  }
+  .mt-12 {
+    margin-top: calc(var(--spacing) * 12);
+  }
+  .mt-16 {
+    margin-top: calc(var(--spacing) * 16);
+  }
+  .mt-20 {
+    margin-top: calc(var(--spacing) * 20);
+  }
+  .mt-auto {
+    margin-top: auto;
+  }
+  .mr-\[0\.24em\] {
+    margin-right: 0.24em;
+  }
+  .mb-1 {
+    margin-bottom: var(--spacing);
+  }
+  .mb-1\.5 {
+    margin-bottom: calc(var(--spacing) * 1.5);
+  }
+  .mb-2 {
+    margin-bottom: calc(var(--spacing) * 2);
+  }
+  .mb-3 {
+    margin-bottom: calc(var(--spacing) * 3);
+  }
+  .mb-4 {
+    margin-bottom: calc(var(--spacing) * 4);
+  }
+  .mb-5 {
+    margin-bottom: calc(var(--spacing) * 5);
+  }
+  .mb-6 {
+    margin-bottom: calc(var(--spacing) * 6);
+  }
+  .mb-7 {
+    margin-bottom: calc(var(--spacing) * 7);
+  }
+  .mb-8 {
+    margin-bottom: calc(var(--spacing) * 8);
+  }
+  .mb-10 {
+    margin-bottom: calc(var(--spacing) * 10);
+  }
+  .mb-12 {
+    margin-bottom: calc(var(--spacing) * 12);
+  }
+  .ml-auto {
+    margin-left: auto;
+  }
+  .block {
+    display: block;
+  }
+  .flex {
+    display: flex;
+  }
+  .grid {
+    display: grid;
+  }
+  .hidden {
+    display: none;
+  }
+  .inline {
+    display: inline;
+  }
+  .inline-block {
+    display: inline-block;
+  }
+  .inline-flex {
+    display: inline-flex;
+  }
+  .h-1 {
+    height: var(--spacing);
+  }
+  .h-1\.5 {
+    height: calc(var(--spacing) * 1.5);
+  }
+  .h-2 {
+    height: calc(var(--spacing) * 2);
+  }
+  .h-2\.5 {
+    height: calc(var(--spacing) * 2.5);
+  }
+  .h-3 {
+    height: calc(var(--spacing) * 3);
+  }
+  .h-3\.5 {
+    height: calc(var(--spacing) * 3.5);
+  }
+  .h-6 {
+    height: calc(var(--spacing) * 6);
+  }
+  .h-9 {
+    height: calc(var(--spacing) * 9);
+  }
+  .h-10 {
+    height: calc(var(--spacing) * 10);
+  }
+  .h-11 {
+    height: calc(var(--spacing) * 11);
+  }
+  .h-12 {
+    height: calc(var(--spacing) * 12);
+  }
+  .h-72 {
+    height: calc(var(--spacing) * 72);
+  }
+  .h-\[3px\] {
+    height: 3px;
+  }
+  .h-auto {
+    height: auto;
+  }
+  .h-full {
+    height: 100%;
+  }
+  .h-px {
+    height: 1px;
+  }
+  .min-h-screen {
+    min-height: 100vh;
+  }
+  .w-1 {
+    width: var(--spacing);
+  }
+  .w-1\.5 {
+    width: calc(var(--spacing) * 1.5);
+  }
+  .w-2 {
+    width: calc(var(--spacing) * 2);
+  }
+  .w-2\.5 {
+    width: calc(var(--spacing) * 2.5);
+  }
+  .w-3 {
+    width: calc(var(--spacing) * 3);
+  }
+  .w-3\.5 {
+    width: calc(var(--spacing) * 3.5);
+  }
+  .w-5 {
+    width: calc(var(--spacing) * 5);
+  }
+  .w-6 {
+    width: calc(var(--spacing) * 6);
+  }
+  .w-9 {
+    width: calc(var(--spacing) * 9);
+  }
+  .w-10 {
+    width: calc(var(--spacing) * 10);
+  }
+  .w-11 {
+    width: calc(var(--spacing) * 11);
+  }
+  .w-12 {
+    width: calc(var(--spacing) * 12);
+  }
+  .w-32 {
+    width: calc(var(--spacing) * 32);
+  }
+  .w-72 {
+    width: calc(var(--spacing) * 72);
+  }
+  .w-full {
+    width: 100%;
+  }
+  .w-max {
+    width: max-content;
+  }
+  .max-w-\[440px\] {
+    max-width: 440px;
+  }
+  .max-w-\[460px\] {
+    max-width: 460px;
+  }
+  .max-w-\[560px\] {
+    max-width: 560px;
+  }
+  .max-w-\[620px\] {
+    max-width: 620px;
+  }
+  .max-w-\[720px\] {
+    max-width: 720px;
+  }
+  .max-w-\[1280px\] {
+    max-width: 1280px;
+  }
+  .min-w-0 {
+    min-width: 0px;
+  }
+  .min-w-\[640px\] {
+    min-width: 640px;
+  }
+  .min-w-\[680px\] {
+    min-width: 680px;
+  }
+  .min-w-\[720px\] {
+    min-width: 720px;
+  }
+  .flex-1 {
+    flex: 1;
+  }
+  .shrink-0 {
+    flex-shrink: 0;
+  }
+  .border-collapse {
+    border-collapse: collapse;
+  }
+  .origin-left {
+    transform-origin: 0;
+  }
+  .-translate-x-1\/2 {
+    --tw-translate-x: calc(calc(1 / 2 * 100%) * -1);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+  .grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  .grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .flex-col {
+    flex-direction: column;
+  }
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+  .items-center {
+    align-items: center;
+  }
+  .items-end {
+    align-items: flex-end;
+  }
+  .items-start {
+    align-items: flex-start;
+  }
+  .justify-between {
+    justify-content: space-between;
+  }
+  .justify-center {
+    justify-content: center;
+  }
+  .justify-end {
+    justify-content: flex-end;
+  }
+  .gap-1 {
+    gap: var(--spacing);
+  }
+  .gap-1\.5 {
+    gap: calc(var(--spacing) * 1.5);
+  }
+  .gap-2 {
+    gap: calc(var(--spacing) * 2);
+  }
+  .gap-2\.5 {
+    gap: calc(var(--spacing) * 2.5);
+  }
+  .gap-3 {
+    gap: calc(var(--spacing) * 3);
+  }
+  .gap-4 {
+    gap: calc(var(--spacing) * 4);
+  }
+  .gap-5 {
+    gap: calc(var(--spacing) * 5);
+  }
+  .gap-6 {
+    gap: calc(var(--spacing) * 6);
+  }
+  .gap-8 {
+    gap: calc(var(--spacing) * 8);
+  }
+  .gap-10 {
+    gap: calc(var(--spacing) * 10);
+  }
+  .gap-12 {
+    gap: calc(var(--spacing) * 12);
+  }
+  .gap-14 {
+    gap: calc(var(--spacing) * 14);
+  }
+  :where(.space-y-1 > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(var(--spacing) * var(--tw-space-y-reverse));
+    margin-block-end: calc(var(--spacing) * calc(1 - var(--tw-space-y-reverse)));
+  }
+  :where(.space-y-2\.5 > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(calc(var(--spacing) * 2.5) * var(--tw-space-y-reverse));
+    margin-block-end: calc(calc(var(--spacing) * 2.5) * calc(1 - var(--tw-space-y-reverse)));
+  }
+  .gap-x-6 {
+    column-gap: calc(var(--spacing) * 6);
+  }
+  .gap-x-8 {
+    column-gap: calc(var(--spacing) * 8);
+  }
+  .gap-x-10 {
+    column-gap: calc(var(--spacing) * 10);
+  }
+  .gap-y-1 {
+    row-gap: var(--spacing);
+  }
+  .gap-y-1\.5 {
+    row-gap: calc(var(--spacing) * 1.5);
+  }
+  .gap-y-3 {
+    row-gap: calc(var(--spacing) * 3);
+  }
+  .gap-y-6 {
+    row-gap: calc(var(--spacing) * 6);
+  }
+  .truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .overflow-hidden {
+    overflow: hidden;
+  }
+  .overflow-x-auto {
+    overflow-x: auto;
+  }
+  .rounded-2xl {
+    border-radius: var(--radius-2xl);
+  }
+  .rounded-3xl {
+    border-radius: var(--radius-3xl);
+  }
+  .rounded-full {
+    border-radius: calc(infinity * 1px);
+  }
+  .rounded-lg {
+    border-radius: var(--radius-lg);
+  }
+  .rounded-xl {
+    border-radius: var(--radius-xl);
+  }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
+  .border-t {
+    border-top-style: var(--tw-border-style);
+    border-top-width: 1px;
+  }
+  .border-b {
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 1px;
+  }
+  .border-\[rgba\(25\,40\,55\,0\.1\)\] {
+    border-color: rgba(25,40,55,0.1);
+  }
+  .border-\[rgba\(25\,40\,55\,0\.4\)\] {
+    border-color: rgba(25,40,55,0.4);
+  }
+  .border-\[rgba\(25\,40\,55\,0\.06\)\] {
+    border-color: rgba(25,40,55,0.06);
+  }
+  .border-\[rgba\(25\,40\,55\,0\.08\)\] {
+    border-color: rgba(25,40,55,0.08);
+  }
+  .border-\[rgba\(25\,40\,55\,0\.12\)\] {
+    border-color: rgba(25,40,55,0.12);
+  }
+  .border-\[rgba\(25\,40\,55\,0\.18\)\] {
+    border-color: rgba(25,40,55,0.18);
+  }
+  .border-\[rgba\(42\,157\,143\,0\.2\)\] {
+    border-color: rgba(42,157,143,0.2);
+  }
+  .border-\[rgba\(42\,157\,143\,0\.25\)\] {
+    border-color: rgba(42,157,143,0.25);
+  }
+  .border-\[rgba\(115\,66\,226\,0\.2\)\] {
+    border-color: rgba(115,66,226,0.2);
+  }
+  .border-\[rgba\(115\,66\,226\,0\.15\)\] {
+    border-color: rgba(115,66,226,0.15);
+  }
+  .border-\[rgba\(115\,66\,226\,0\.25\)\] {
+    border-color: rgba(115,66,226,0.25);
+  }
+  .bg-\[\#7342E2\] {
+    background-color: #7342E2;
+  }
+  .bg-\[\#192837\] {
+    background-color: #192837;
+  }
+  .bg-\[\#F2F2EE\] {
+    background-color: #F2F2EE;
+  }
+  .bg-\[rgba\(25\,40\,55\,0\.12\)\] {
+    background-color: rgba(25,40,55,0.12);
+  }
+  .bg-\[rgba\(25\,40\,55\,0\.18\)\] {
+    background-color: rgba(25,40,55,0.18);
+  }
+  .bg-\[rgba\(115\,66\,226\,0\.1\)\] {
+    background-color: rgba(115,66,226,0.1);
+  }
+  .bg-transparent {
+    background-color: transparent;
+  }
+  .bg-white {
+    background-color: var(--color-white);
+  }
+  .bg-white\/60 {
+    background-color: color-mix(in srgb, #fff 60%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-white) 60%, transparent);
+    }
+  }
+  .bg-white\/70 {
+    background-color: color-mix(in srgb, #fff 70%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-white) 70%, transparent);
+    }
+  }
+  .bg-white\/80 {
+    background-color: color-mix(in srgb, #fff 80%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-white) 80%, transparent);
+    }
+  }
+  .bg-gradient-to-l {
+    --tw-gradient-position: to left in oklab;
+    background-image: linear-gradient(var(--tw-gradient-stops));
+  }
+  .bg-gradient-to-r {
+    --tw-gradient-position: to right in oklab;
+    background-image: linear-gradient(var(--tw-gradient-stops));
+  }
+  .from-\[\#F0E9FF\] {
+    --tw-gradient-from: #F0E9FF;
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .to-transparent {
+    --tw-gradient-to: transparent;
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .object-contain {
+    object-fit: contain;
+  }
+  .object-cover {
+    object-fit: cover;
+  }
+  .p-1 {
+    padding: var(--spacing);
+  }
+  .p-2 {
+    padding: calc(var(--spacing) * 2);
+  }
+  .p-4 {
+    padding: calc(var(--spacing) * 4);
+  }
+  .p-5 {
+    padding: calc(var(--spacing) * 5);
+  }
+  .p-6 {
+    padding: calc(var(--spacing) * 6);
+  }
+  .p-7 {
+    padding: calc(var(--spacing) * 7);
+  }
+  .p-8 {
+    padding: calc(var(--spacing) * 8);
+  }
+  .px-2 {
+    padding-inline: calc(var(--spacing) * 2);
+  }
+  .px-2\.5 {
+    padding-inline: calc(var(--spacing) * 2.5);
+  }
+  .px-3 {
+    padding-inline: calc(var(--spacing) * 3);
+  }
+  .px-4 {
+    padding-inline: calc(var(--spacing) * 4);
+  }
+  .px-5 {
+    padding-inline: calc(var(--spacing) * 5);
+  }
+  .px-6 {
+    padding-inline: calc(var(--spacing) * 6);
+  }
+  .py-0\.5 {
+    padding-block: calc(var(--spacing) * 0.5);
+  }
+  .py-1 {
+    padding-block: var(--spacing);
+  }
+  .py-1\.5 {
+    padding-block: calc(var(--spacing) * 1.5);
+  }
+  .py-2 {
+    padding-block: calc(var(--spacing) * 2);
+  }
+  .py-2\.5 {
+    padding-block: calc(var(--spacing) * 2.5);
+  }
+  .py-3 {
+    padding-block: calc(var(--spacing) * 3);
+  }
+  .py-3\.5 {
+    padding-block: calc(var(--spacing) * 3.5);
+  }
+  .py-4 {
+    padding-block: calc(var(--spacing) * 4);
+  }
+  .py-5 {
+    padding-block: calc(var(--spacing) * 5);
+  }
+  .py-10 {
+    padding-block: calc(var(--spacing) * 10);
+  }
+  .py-12 {
+    padding-block: calc(var(--spacing) * 12);
+  }
+  .py-16 {
+    padding-block: calc(var(--spacing) * 16);
+  }
+  .py-20 {
+    padding-block: calc(var(--spacing) * 20);
+  }
+  .pr-8 {
+    padding-right: calc(var(--spacing) * 8);
+  }
+  .pb-10 {
+    padding-bottom: calc(var(--spacing) * 10);
+  }
+  .pb-16 {
+    padding-bottom: calc(var(--spacing) * 16);
+  }
+  .pl-5 {
+    padding-left: calc(var(--spacing) * 5);
+  }
+  .text-center {
+    text-align: center;
+  }
+  .text-left {
+    text-align: left;
+  }
+  .align-bottom {
+    vertical-align: bottom;
+  }
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+  .text-2xl {
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
+  }
+  .text-base {
+    font-size: var(--text-base);
+    line-height: var(--tw-leading, var(--text-base--line-height));
+  }
+  .text-lg {
+    font-size: var(--text-lg);
+    line-height: var(--tw-leading, var(--text-lg--line-height));
+  }
+  .text-sm {
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
+  }
+  .text-xl {
+    font-size: var(--text-xl);
+    line-height: var(--tw-leading, var(--text-xl--line-height));
+  }
+  .text-xs {
+    font-size: var(--text-xs);
+    line-height: var(--tw-leading, var(--text-xs--line-height));
+  }
+  .text-\[10px\] {
+    font-size: 10px;
+  }
+  .leading-relaxed {
+    --tw-leading: var(--leading-relaxed);
+    line-height: var(--leading-relaxed);
+  }
+  .font-bold {
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+  }
+  .font-medium {
+    --tw-font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-medium);
+  }
+  .font-semibold {
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
+  }
+  .tracking-tight {
+    --tw-tracking: var(--tracking-tight);
+    letter-spacing: var(--tracking-tight);
+  }
+  .tracking-wide {
+    --tw-tracking: var(--tracking-wide);
+    letter-spacing: var(--tracking-wide);
+  }
+  .tracking-widest {
+    --tw-tracking: var(--tracking-widest);
+    letter-spacing: var(--tracking-widest);
+  }
+  .whitespace-nowrap {
+    white-space: nowrap;
+  }
+  .text-\[\#1f6f63\] {
+    color: #1f6f63;
+  }
+  .text-\[\#5a33b8\] {
+    color: #5a33b8;
+  }
+  .text-\[\#7342E2\] {
+    color: #7342E2;
+  }
+  .text-\[\#192837\] {
+    color: #192837;
+  }
+  .text-white {
+    color: var(--color-white);
+  }
+  .uppercase {
+    text-transform: uppercase;
+  }
+  .opacity-40 {
+    opacity: 40%;
+  }
+  .opacity-50 {
+    opacity: 50%;
+  }
+  .opacity-60 {
+    opacity: 60%;
+  }
+  .opacity-70 {
+    opacity: 70%;
+  }
+  .opacity-75 {
+    opacity: 75%;
+  }
+  .opacity-80 {
+    opacity: 80%;
+  }
+  .opacity-100 {
+    opacity: 100%;
+  }
+  .opacity-\[0\.06\] {
+    opacity: 0.06;
+  }
+  .filter {
+    filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
+  }
+  .backdrop-blur-md {
+    --tw-backdrop-blur: blur(var(--blur-md));
+    -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+    backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+  }
+  .backdrop-blur-sm {
+    --tw-backdrop-blur: blur(var(--blur-sm));
+    -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+    backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+  }
+  .backdrop-filter {
+    -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+    backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+  }
+  .transition {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .transition-opacity {
+    transition-property: opacity;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .transition-shadow {
+    transition-property: box-shadow;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .transition-transform {
+    transition-property: transform, translate, scale, rotate;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .duration-300 {
+    --tw-duration: 300ms;
+    transition-duration: 300ms;
+  }
+  .will-change-transform {
+    will-change: transform;
+  }
+  .outline-none {
+    --tw-outline-style: none;
+    outline-style: none;
+  }
+  .select-none {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  @media (hover: hover) {
+    .group-hover\:translate-x-1:is(:where(.group):hover *) {
+      --tw-translate-x: var(--spacing);
+      translate: var(--tw-translate-x) var(--tw-translate-y);
+    }
+    .group-hover\:scale-110:is(:where(.group):hover *) {
+      --tw-scale-x: 110%;
+      --tw-scale-y: 110%;
+      --tw-scale-z: 110%;
+      scale: var(--tw-scale-x) var(--tw-scale-y);
+    }
+  }
+  .first\:pl-5:first-child {
+    padding-left: calc(var(--spacing) * 5);
+  }
+  .last\:border-0:last-child {
+    border-style: var(--tw-border-style);
+    border-width: 0px;
+  }
+  @media (hover: hover) {
+    .hover\:scale-105:hover {
+      --tw-scale-x: 105%;
+      --tw-scale-y: 105%;
+      --tw-scale-z: 105%;
+      scale: var(--tw-scale-x) var(--tw-scale-y);
+    }
+    .hover\:bg-\[rgba\(25\,40\,55\,0\.06\)\]:hover {
+      background-color: rgba(25,40,55,0.06);
+    }
+    .hover\:bg-\[rgba\(115\,66\,226\,0\.08\)\]:hover {
+      background-color: rgba(115,66,226,0.08);
+    }
+    .hover\:text-\[\#7342E2\]:hover {
+      color: #7342E2;
+    }
+    .hover\:opacity-50:hover {
+      opacity: 50%;
+    }
+    .hover\:opacity-60:hover {
+      opacity: 60%;
+    }
+    .hover\:opacity-90:hover {
+      opacity: 90%;
+    }
+    .hover\:opacity-100:hover {
+      opacity: 100%;
+    }
+    .hover\:shadow-\[0_16px_40px_rgba\(25\,40\,55\,0\.1\)\]:hover {
+      --tw-shadow: 0 16px 40px var(--tw-shadow-color, rgba(25,40,55,0.1));
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    }
+    .hover\:shadow-\[0_20px_50px_rgba\(25\,40\,55\,0\.12\)\]:hover {
+      --tw-shadow: 0 20px 50px var(--tw-shadow-color, rgba(25,40,55,0.12));
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    }
+  }
+  .focus\:border-\[\#7342E2\]:focus {
+    border-color: #7342E2;
+  }
+  .focus\:ring-2:focus {
+    --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .focus\:ring-\[rgba\(115\,66\,226\,0\.15\)\]:focus {
+    --tw-ring-color: rgba(115,66,226,0.15);
+  }
+  .active\:scale-95:active {
+    --tw-scale-x: 95%;
+    --tw-scale-y: 95%;
+    --tw-scale-z: 95%;
+    scale: var(--tw-scale-x) var(--tw-scale-y);
+  }
+  @media (width >= 40rem) {
+    .sm\:grid-cols-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .sm\:grid-cols-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .sm\:p-10 {
+      padding: calc(var(--spacing) * 10);
+    }
+    .sm\:p-12 {
+      padding: calc(var(--spacing) * 12);
+    }
+    .sm\:px-8 {
+      padding-inline: calc(var(--spacing) * 8);
+    }
+    .sm\:py-5 {
+      padding-block: calc(var(--spacing) * 5);
+    }
+    .sm\:py-16 {
+      padding-block: calc(var(--spacing) * 16);
+    }
+    .sm\:py-24 {
+      padding-block: calc(var(--spacing) * 24);
+    }
+    .sm\:py-28 {
+      padding-block: calc(var(--spacing) * 28);
+    }
+  }
+  @media (width >= 48rem) {
+    .md\:col-span-1 {
+      grid-column: span 1 / span 1;
+    }
+    .md\:flex {
+      display: flex;
+    }
+    .md\:hidden {
+      display: none;
+    }
+    .md\:grid-cols-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .md\:grid-cols-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .md\:grid-cols-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+    .md\:flex-row {
+      flex-direction: row;
+    }
+    .md\:items-center {
+      align-items: center;
+    }
+  }
+  @media (width >= 64rem) {
+    .lg\:sticky {
+      position: sticky;
+    }
+    .lg\:top-8 {
+      top: calc(var(--spacing) * 8);
+    }
+    .lg\:mt-auto {
+      margin-top: auto;
+    }
+    .lg\:block {
+      display: block;
+    }
+    .lg\:grid-cols-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .lg\:grid-cols-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+    .lg\:grid-cols-\[260px_1fr\] {
+      grid-template-columns: 260px 1fr;
+    }
+    .lg\:self-start {
+      align-self: flex-start;
+    }
+  }
+}
+:root {
+  --font-heading: 'Helvetica Now Display Bold', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --color-text: #192837;
+  --color-accent: #7342e2;
+  --color-login-bg: #f2f2ee;
+}
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+}
+@property --tw-translate-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-translate-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-translate-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-space-y-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-gradient-position {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-gradient-from {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+@property --tw-gradient-via {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+@property --tw-gradient-to {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+@property --tw-gradient-stops {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-gradient-via-stops {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-gradient-from-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+@property --tw-gradient-via-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 50%;
+}
+@property --tw-gradient-to-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-leading {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-tracking {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-blur {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-brightness {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-contrast {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-grayscale {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-hue-rotate {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-invert {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-opacity {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-saturate {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-sepia {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-drop-shadow {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-drop-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-drop-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-drop-shadow-size {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-blur {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-brightness {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-contrast {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-grayscale {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-hue-rotate {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-invert {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-opacity {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-saturate {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-sepia {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-duration {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-scale-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-scale-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-scale-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-inset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-inset-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-inset-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-inset-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-inset-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-ring-inset {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-offset-width {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+@property --tw-ring-offset-color {
+  syntax: "*";
+  inherits: false;
+  initial-value: #fff;
+}
+@property --tw-ring-offset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-translate-x: 0;
+      --tw-translate-y: 0;
+      --tw-translate-z: 0;
+      --tw-space-y-reverse: 0;
+      --tw-border-style: solid;
+      --tw-gradient-position: initial;
+      --tw-gradient-from: #0000;
+      --tw-gradient-via: #0000;
+      --tw-gradient-to: #0000;
+      --tw-gradient-stops: initial;
+      --tw-gradient-via-stops: initial;
+      --tw-gradient-from-position: 0%;
+      --tw-gradient-via-position: 50%;
+      --tw-gradient-to-position: 100%;
+      --tw-leading: initial;
+      --tw-font-weight: initial;
+      --tw-tracking: initial;
+      --tw-blur: initial;
+      --tw-brightness: initial;
+      --tw-contrast: initial;
+      --tw-grayscale: initial;
+      --tw-hue-rotate: initial;
+      --tw-invert: initial;
+      --tw-opacity: initial;
+      --tw-saturate: initial;
+      --tw-sepia: initial;
+      --tw-drop-shadow: initial;
+      --tw-drop-shadow-color: initial;
+      --tw-drop-shadow-alpha: 100%;
+      --tw-drop-shadow-size: initial;
+      --tw-backdrop-blur: initial;
+      --tw-backdrop-brightness: initial;
+      --tw-backdrop-contrast: initial;
+      --tw-backdrop-grayscale: initial;
+      --tw-backdrop-hue-rotate: initial;
+      --tw-backdrop-invert: initial;
+      --tw-backdrop-opacity: initial;
+      --tw-backdrop-saturate: initial;
+      --tw-backdrop-sepia: initial;
+      --tw-duration: initial;
+      --tw-scale-x: 1;
+      --tw-scale-y: 1;
+      --tw-scale-z: 1;
+      --tw-shadow: 0 0 #0000;
+      --tw-shadow-color: initial;
+      --tw-shadow-alpha: 100%;
+      --tw-inset-shadow: 0 0 #0000;
+      --tw-inset-shadow-color: initial;
+      --tw-inset-shadow-alpha: 100%;
+      --tw-ring-color: initial;
+      --tw-ring-shadow: 0 0 #0000;
+      --tw-inset-ring-color: initial;
+      --tw-inset-ring-shadow: 0 0 #0000;
+      --tw-ring-inset: initial;
+      --tw-ring-offset-width: 0px;
+      --tw-ring-offset-color: #fff;
+      --tw-ring-offset-shadow: 0 0 #0000;
+    }
+  }
+}
+</style>
+<style>/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(assets/fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7W0Q5n-wU.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(assets/fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7W0Q5n-wU.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(assets/fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7W0Q5n-wU.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(assets/fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7W0Q5n-wU.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(assets/fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7W0Q5n-wU.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7W0Q5n-wU.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(assets/fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7W0Q5n-wU.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7W0Q5n-wU.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7W0Q5n-wU.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7W0Q5n-wU.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7W0Q5n-wU.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7W0Q5n-wU.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7W0Q5n-wU.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7W0Q5n-wU.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7W0Q5n-wU.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7W0Q5n-wU.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7W0Q5n-wU.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7W0Q5n-wU.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(assets/fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7W0Q5n-wU.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(assets/fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7W0Q5n-wU.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(assets/fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7W0Q5n-wU.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(assets/fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7W0Q5n-wU.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(assets/fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7W0Q5n-wU.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7W0Q5n-wU.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(assets/fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(assets/fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7W0Q5n-wU.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(assets/fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7W0Q5n-wU.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(assets/fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7W0Q5n-wU.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(assets/fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7W0Q5n-wU.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(assets/fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7W0Q5n-wU.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7W0Q5n-wU.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(assets/fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(assets/fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7W0Q5n-wU.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(assets/fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7W0Q5n-wU.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(assets/fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7W0Q5n-wU.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(assets/fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7W0Q5n-wU.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(assets/fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7W0Q5n-wU.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7W0Q5n-wU.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(assets/fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(assets/fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7W0Q5n-wU.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(assets/fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7W0Q5n-wU.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(assets/fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7W0Q5n-wU.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(assets/fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7W0Q5n-wU.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(assets/fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7W0Q5n-wU.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7W0Q5n-wU.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(assets/fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>/*
+      www.OnlineWebFonts.Com 
+      You must credit the author Copy this link on your web 
+      <div>Font made from <a href="http://www.onlinewebfonts.com/fonts">Web Fonts</a>is licensed by CC BY 4.0</div>
+      OR
+      <a href="http://www.onlinewebfonts.com/fonts">Web Fonts</a>
+
+      CSS rules to specify fonts
+
+      font-family: "Helvetica Now Display Bold";;
+
+*/
+
+@font-face{
+    font-family: "Helvetica Now Display Bold";
+    src: url("https://db.onlinewebfonts.com/t/04e6981992c0e2e7642af2074ebe3901.eot");
+    src: url("https://db.onlinewebfonts.com/t/04e6981992c0e2e7642af2074ebe3901.eot?#iefix")format("embedded-opentype"),
+        url("assets/fonts/04e6981992c0e2e7642af2074ebe3901.woff")format("woff"),
+        url("assets/fonts/04e6981992c0e2e7642af2074ebe3901.woff2")format("woff2"),
+        url("assets/fonts/04e6981992c0e2e7642af2074ebe3901.ttf")format("truetype"),
+        url("https://db.onlinewebfonts.com/t/04e6981992c0e2e7642af2074ebe3901.svg#Helvetica Now Display Bold")format("svg");
+    font-weight:normal;
+    font-style:normal;
+    font-display:swap;
+}
+ 
+</style>
+<script type="module" src="/@vite/client"></script>
+</head>
+<body>
+
+    <div id="root"><main class="relative"><div class="fixed top-0 left-0 z-[60] h-[3px] w-full origin-left will-change-transform" style="background: linear-gradient(90deg, rgb(115, 66, 226), rgb(155, 107, 255), rgb(77, 224, 192)); translate: none; rotate: none; scale: none; transform: translate3d(0px, 0px, 0px) scale(0.0883, 1); transform-origin: 0% 50%;"></div><section class="relative min-h-screen w-full overflow-hidden"><div class="absolute inset-0 overflow-hidden" style="filter: blur(2px);"><video src="http://localhost:5199/BG.mp4" autoplay="" loop="" playsinline="" class="hero-video absolute inset-0 h-full w-full object-cover will-change-transform" style="translate: none; rotate: none; scale: none; filter: blur(0px); transform: translate(0%, -18%) scale(1.35, 1.35);"></video></div><div class="absolute inset-0" style="background: linear-gradient(90deg, rgba(255, 255, 255, 0.82) 0%, rgba(255, 255, 255, 0.55) 28%, rgba(255, 255, 255, 0.22) 55%, rgba(255, 255, 255, 0.12) 100%);"></div><div class="pointer-events-none absolute rounded-full will-change-transform -top-20 right-[-8rem]" data-hero-orb-1="true" style="width: 420px; height: 420px; background: radial-gradient(circle at 30% 30%, rgba(155, 107, 255, 0.25), rgba(115, 66, 226, 0.05) 60%, transparent 70%); filter: blur(6px); translate: none; rotate: none; scale: none; transform: translate(0%, -10.9028%) translate3d(5.8306px, 2.8963px, 0px) rotate(0.5793deg);"></div><div class="pointer-events-none absolute rounded-full will-change-transform top-1/2 left-[-10rem]" data-hero-orb-2="true" style="width: 340px; height: 340px; background: radial-gradient(circle at 60% 40%, rgba(42, 157, 143, 0.18), rgba(42, 157, 143, 0.03) 60%, transparent 70%); filter: blur(6px); translate: none; rotate: none; scale: none; transform: translate(0%, 7.9278%) translate3d(13.4706px, 3.7273px, 0px) rotate(0.9318deg);"></div><header class="relative z-10 mx-auto flex max-w-[1280px] items-center justify-between px-5 py-4 sm:px-8 sm:py-5"><a class="flex items-center gap-2.5" aria-label="TokenSea home" href="/" data-discover="true"><img alt="TokenSea logo" width="32" height="32" class="h-auto object-contain" src="http://localhost:5199/src/assets/logo.png" style="width: 32px;"><span class="text-lg tracking-tight" style="font-family: var(--font-heading); color: rgb(25, 40, 55);">TokenSea</span></a><nav class="hidden items-center gap-8 md:flex"><a class="text-sm font-medium text-[#192837] opacity-100 transition-opacity hover:opacity-60" href="/#market" data-discover="true">Market</a><a class="text-sm font-medium text-[#192837] opacity-100 transition-opacity hover:opacity-60" href="/pricing" data-discover="true">Payouts</a><a class="text-sm font-medium text-[#192837] opacity-100 transition-opacity hover:opacity-60" href="/docs" data-discover="true">How it works</a></nav><div class="hidden items-center gap-3 md:flex"><a class="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold transition hover:opacity-90 bg-[#7342E2] text-white" href="/account" data-discover="true">Start selling</a><a class="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold transition hover:opacity-90 bg-[#F2F2EE] text-[#192837]" href="/account" data-discover="true">Sign In</a></div><button class="flex h-10 w-10 items-center justify-center rounded-full text-[#192837] transition hover:bg-[rgba(25,40,55,0.06)] md:hidden" aria-label="Open menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu" aria-hidden="true"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg></button></header><div class="relative z-10 mx-auto max-w-[1280px] px-5 sm:px-8"><div class="mx-auto max-w-[1280px]" style="padding-top: clamp(40px, 8vw, 72px);"><div data-hero-content="true" class="max-w-[620px]" style="translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);"><span data-hero-eyebrow="true" class="mb-6 inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold tracking-wide uppercase" style="background: rgba(255, 255, 255, 0.7); color: rgb(115, 66, 226); box-shadow: rgba(25, 40, 55, 0.08) 0px 2px 12px; backdrop-filter: blur(6px); border: 1px solid rgba(115, 66, 226, 0.2); translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);"><span class="inline-block h-1.5 w-1.5 rounded-full" style="background: linear-gradient(90deg, rgb(115, 66, 226), rgb(155, 107, 255));"></span>AI surplus marketplace</span><h1 class="mb-7" style="font-family: var(--font-heading); font-size: clamp(2rem, 6vw, 3.75rem); line-height: 1.04; letter-spacing: -0.025em; color: rgb(25, 40, 55);"><span class="mr-[0.24em] inline-block overflow-hidden align-bottom" style="padding-bottom: 0.08em; margin-bottom: -0.08em;"><span data-hero-word="true" class="inline-block will-change-transform" style="display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">Sell</span></span><span class="mr-[0.24em] inline-block overflow-hidden align-bottom" style="padding-bottom: 0.08em; margin-bottom: -0.08em;"><span data-hero-word="true" class="inline-block will-change-transform" style="display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">your</span></span><span class="mr-[0.24em] inline-block overflow-hidden align-bottom" style="padding-bottom: 0.08em; margin-bottom: -0.08em;"><span data-hero-word="true" class="inline-block will-change-transform" style="display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">spare</span></span><span class="mr-[0.24em] inline-block overflow-hidden align-bottom" style="padding-bottom: 0.08em; margin-bottom: -0.08em;"><span data-hero-word="true" class="inline-block will-change-transform" style="display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">AI</span></span><span class="mr-[0.24em] inline-block overflow-hidden align-bottom" style="padding-bottom: 0.08em; margin-bottom: -0.08em;"><span data-hero-word="true" class="inline-block will-change-transform" style="display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">tokens</span></span><span class="mr-[0.24em] inline-block overflow-hidden align-bottom" style="padding-bottom: 0.08em; margin-bottom: -0.08em;"><span data-hero-word="true" class="inline-block will-change-transform" style="display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);"><span class="inline-block" style="background-image: linear-gradient(90deg, rgb(115, 66, 226) 0%, rgb(155, 107, 255) 20%, rgb(77, 224, 192) 40%, rgb(42, 157, 143) 60%, rgb(244, 162, 97) 80%, rgb(155, 107, 255) 100%); background-size: 250% 100%; background-position: 53.1918% 50%; background-clip: text; color: transparent;">for cash.</span></span></span></h1><p data-hero-sub="true" class="mb-7 max-w-[560px]" style="font-family: var(--font-body); font-size: clamp(0.95rem, 2.5vw, 1.1rem); line-height: 1.65; color: rgb(14, 27, 38); font-weight: 500; text-shadow: rgba(255, 255, 255, 0.85) 0px 1px 2px, rgba(255, 255, 255, 0.65) 0px 0px 12px; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">List unused AI API credits or included capacity on the TokenSea market. Earn USD when buyers use your models, then cash out to Revolut, Zelle, PayPal, and more.</p><div data-hero-baseurl="true" style="translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);"><div class="flex w-full items-center gap-3 rounded-2xl border border-[rgba(25,40,55,0.12)] bg-white/70 px-4 py-3 backdrop-blur-md"><span class="inline-flex items-center gap-2 text-xs font-semibold tracking-wide uppercase opacity-50"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7342E2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trending-up" aria-hidden="true"><path d="M16 7h6v6"></path><path d="m22 7-8.5 8.5-5-5L2 17"></path></svg>Market</span><div class="grid flex-1 grid-cols-1 gap-x-6 gap-y-1 sm:grid-cols-3"><span class="text-xs opacity-80"><span class="font-semibold text-[#192837]">396</span> <span class="opacity-70">Models listed</span></span><span class="text-xs opacity-80"><span class="font-semibold text-[#192837]">1.4M</span> <span class="opacity-70">Requests / 24h</span></span><span class="text-xs opacity-80"><span class="font-semibold text-[#192837]">$2,867.24</span> <span class="opacity-70">Paid out / 24h</span></span></div></div></div><div data-hero-cta="true" class="mt-7 flex flex-wrap items-center gap-4" style="translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);"><a href="#market" class="flex items-center justify-center gap-2 font-semibold text-white transition-transform duration-300 hover:scale-105 active:scale-95" style="background: rgb(115, 66, 226); border-radius: 50px; padding: 17px 24px; font-size: clamp(0.9rem, 2vw, 1rem); box-shadow: rgba(115, 66, 226, 0.28) 0px 4px 24px;">Start selling<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a><a href="#market" class="inline-flex items-center justify-center font-semibold text-[#192837] transition-transform duration-300 hover:scale-105 active:scale-95" style="background: rgb(242, 242, 238); border-radius: 50px; padding: 17px 24px; font-size: clamp(0.9rem, 2vw, 1rem);">See what's paying</a></div></div></div></div><div data-scroll-indicator="true" class="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2" style="transform: translate(-50%, 0%) translate3d(-0.1094px, 4.2372px, 0px); translate: none; rotate: none; scale: none; opacity: 0.7458; visibility: inherit;"><span class="text-xs font-medium tracking-widest uppercase opacity-50">Scroll</span><div class="flex h-9 w-5 items-start justify-center rounded-full border border-[rgba(25,40,55,0.4)] p-1"><span class="h-2 w-1 rounded-full" style="background: linear-gradient(rgb(115, 66, 226), rgb(155, 107, 255));"></span></div></div></section><section class="relative overflow-hidden bg-[#F2F2EE] py-20 sm:py-28"><div class="pointer-events-none absolute rounded-full will-change-transform -top-32 right-[-12rem]" data-features-orb="true" style="width: 460px; height: 460px; background: radial-gradient(circle at 40% 40%, rgba(155, 107, 255, 0.16), rgba(115, 66, 226, 0.03) 60%, transparent 70%); filter: blur(6px); translate: none; rotate: none; scale: none; transform: translate(0%, -26%) translate3d(10.6408px, 0.1709px, 0px) rotate(0.038deg);"></div><div data-features-content="true" class="relative mx-auto max-w-[1280px] px-5 sm:px-8" style="translate: none; rotate: none; scale: none; transform: translate(0%, 12%);"><div class="max-w-[720px]" data-features-heading="true" style="translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);"><span class="mb-4 inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold tracking-wide uppercase" style="background: rgba(115, 66, 226, 0.12); color: rgb(115, 66, 226);"><span class="inline-block h-1.5 w-1.5 rounded-full" style="background: linear-gradient(90deg, rgb(115, 66, 226), rgb(155, 107, 255));"></span>Why sell on TokenSea</span><h2 class="mb-12" style="font-family: var(--font-heading); font-size: clamp(1.5rem, 4vw, 2.25rem); line-height: 1.1; letter-spacing: -0.02em; color: rgb(25, 40, 55);">Idle AI capacity should <span class="inline-block" style="background-image: linear-gradient(90deg, rgb(115, 66, 226) 0%, rgb(155, 107, 255) 20%, rgb(77, 224, 192) 40%, rgb(42, 157, 143) 60%, rgb(244, 162, 97) 80%, rgb(155, 107, 255) 100%); background-size: 250% 100%; background-position: 53.1918% 50%; background-clip: text; color: transparent;">make you money.</span></h2></div><div data-features-grid="true" class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4" style="translate: none; rotate: none; scale: none; transform: translate(0%, 8%);"><article data-feature-card="true" class="group rounded-2xl bg-white p-6 transition-shadow duration-300 hover:shadow-[0_20px_50px_rgba(25,40,55,0.12)]" style="box-shadow: rgba(25, 40, 55, 0.06) 0px 8px 32px; translate: none; rotate: none; scale: none; transform-origin: 50% 50%; opacity: 1; visibility: inherit; transform: translate(0px, 0px);"><div data-feature-icon="true" class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl transition-transform duration-300 group-hover:scale-110" style="background: rgba(115, 66, 226, 0.1); translate: none; rotate: none; scale: none; transform: translate3d(0px, -0.457px, 0px);"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7342E2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wallet" aria-hidden="true"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"></path><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"></path></svg></div><h3 class="mb-2 font-semibold" style="font-size: clamp(0.95rem, 2vw, 1.05rem);">Sell what you already pay for</h3><p class="leading-relaxed opacity-70" style="font-size: clamp(0.85rem, 2vw, 0.95rem);">Turn unused API credits or included subscription capacity into USD every time a buyer hits your listing.</p></article><article data-feature-card="true" class="group rounded-2xl bg-white p-6 transition-shadow duration-300 hover:shadow-[0_20px_50px_rgba(25,40,55,0.12)]" style="box-shadow: rgba(25, 40, 55, 0.06) 0px 8px 32px; translate: none; rotate: none; scale: none; transform-origin: 50% 50%; opacity: 1; visibility: inherit; transform: translate(0px, 0px);"><div data-feature-icon="true" class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl transition-transform duration-300 group-hover:scale-110" style="background: rgba(115, 66, 226, 0.1); translate: none; rotate: none; scale: none; transform: translate3d(0px, -0.457px, 0px);"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7342E2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-key-round" aria-hidden="true"><path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z"></path><circle cx="16.5" cy="7.5" r=".5" fill="currentColor"></circle></svg></div><h3 class="mb-2 font-semibold" style="font-size: clamp(0.95rem, 2vw, 1.05rem);">Encrypted per listing</h3><p class="leading-relaxed opacity-70" style="font-size: clamp(0.85rem, 2vw, 0.95rem);">Your key is held only to serve your listing, encrypted, and never kept on file after it ends.</p></article><article data-feature-card="true" class="group rounded-2xl bg-white p-6 transition-shadow duration-300 hover:shadow-[0_20px_50px_rgba(25,40,55,0.12)]" style="box-shadow: rgba(25, 40, 55, 0.06) 0px 8px 32px; translate: none; rotate: none; scale: none; transform-origin: 50% 50%; opacity: 1; visibility: inherit; transform: translate(0px, 0px);"><div data-feature-icon="true" class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl transition-transform duration-300 group-hover:scale-110" style="background: rgba(115, 66, 226, 0.1); translate: none; rotate: none; scale: none; transform: translate3d(0px, -0.457px, 0px);"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7342E2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plug" aria-hidden="true"><path d="M12 22v-5"></path><path d="M15 8V2"></path><path d="M17 8a1 1 0 0 1 1 1v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1z"></path><path d="M9 8V2"></path></svg></div><h3 class="mb-2 font-semibold" style="font-size: clamp(0.95rem, 2vw, 1.05rem);">Autopilot pricing</h3><p class="leading-relaxed opacity-70" style="font-size: clamp(0.85rem, 2vw, 0.95rem);">We price your listing to win demand. Set an optional minimum — Autopilot never goes below it.</p></article><article data-feature-card="true" class="group rounded-2xl bg-white p-6 transition-shadow duration-300 hover:shadow-[0_20px_50px_rgba(25,40,55,0.12)]" style="box-shadow: rgba(25, 40, 55, 0.06) 0px 8px 32px; translate: none; rotate: none; scale: none; transform-origin: 50% 50%; opacity: 1; visibility: inherit; transform: translate(0px, 0px);"><div data-feature-icon="true" class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl transition-transform duration-300 group-hover:scale-110" style="background: rgba(115, 66, 226, 0.1); translate: none; rotate: none; scale: none; transform: translate3d(0px, -0.457px, 0px);"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7342E2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-receipt-text" aria-hidden="true"><path d="M13 16H8"></path><path d="M14 8H8"></path><path d="M16 12H8"></path><path d="M4 3a1 1 0 0 1 1-1 1.3 1.3 0 0 1 .7.2l.933.6a1.3 1.3 0 0 0 1.4 0l.934-.6a1.3 1.3 0 0 1 1.4 0l.933.6a1.3 1.3 0 0 0 1.4 0l.933-.6a1.3 1.3 0 0 1 1.4 0l.934.6a1.3 1.3 0 0 0 1.4 0l.933-.6A1.3 1.3 0 0 1 19 2a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1 1.3 1.3 0 0 1-.7-.2l-.933-.6a1.3 1.3 0 0 0-1.4 0l-.934.6a1.3 1.3 0 0 1-1.4 0l-.933-.6a1.3 1.3 0 0 0-1.4 0l-.933.6a1.3 1.3 0 0 1-1.4 0l-.934-.6a1.3 1.3 0 0 0-1.4 0l-.933.6a1.3 1.3 0 0 1-.7.2 1 1 0 0 1-1-1z"></path></svg></div><h3 class="mb-2 font-semibold" style="font-size: clamp(0.95rem, 2vw, 1.05rem);">Automatic payouts</h3><p class="leading-relaxed opacity-70" style="font-size: clamp(0.85rem, 2vw, 0.95rem);">Earn per request. USD batches to your wallet at $5 or after 72 hours, then cash out to the account you choose.</p></article></div></div></section><section data-marquee-band="true" class="relative overflow-hidden py-5" style="background: linear-gradient(90deg, rgb(244, 238, 255) 0%, rgb(235, 226, 255) 50%, rgb(244, 238, 255) 100%);"><div class="pointer-events-none absolute inset-y-0 left-0 z-10 w-32 bg-gradient-to-r from-[#F0E9FF] to-transparent"></div><div class="pointer-events-none absolute inset-y-0 right-0 z-10 w-32 bg-gradient-to-l from-[#F0E9FF] to-transparent"></div><div data-marquee-track="true" class="flex w-max items-center whitespace-nowrap will-change-transform" style="translate: none; rotate: none; scale: none; transform: translate(-44.4568%, 0%) translate3d(0px, 0px, 0px);"><span class="flex items-center gap-8 pr-8 font-mono text-sm font-medium tracking-wide" style="color: rgb(61, 42, 107);">glm-5.3<span style="color: rgb(115, 66, 226);">✦</span></span><span class="flex items-center gap-8 pr-8 font-mono text-sm font-medium tracking-wide" style="color: rgba(115, 66, 226, 0.45);">claude-opus-5<span style="color: rgb(115, 66, 226);">✦</span></span><span class="flex items-center gap-8 pr-8 font-mono text-sm font-medium tracking-wide" style="color: rgb(61, 42, 107);">gpt-5.6-sol<span style="color: rgb(115, 66, 226);">✦</span></span><span class="flex items-center gap-8 pr-8 font-mono text-sm font-medium tracking-wide" style="color: rgba(115, 66, 226, 0.45);">kimi-k3<span style="color: rgb(115, 66, 226);">✦</span></span><span class="flex items-center gap-8 pr-8 font-mono text-sm font-medium tracking-wide" style="color: rgb(61, 42, 107);">claude-fable-5<span style="color: rgb(115, 66, 226);">✦</span></span><span class="flex items-center gap-8 pr-8 font-mono text-sm font-medium tracking-wide" style="color: rgba(115, 66, 226, 0.45);">glm-5.1<span style="color: rgb(115, 66, 226);">✦</span></span><span class="flex items-center gap-8 pr-8 font-mono text-sm font-medium tracking-wide" style="color: rgb(61, 42, 107);">gpt-6-astra<span style="color: rgb(115, 66, 226);">✦</span></span><span class="flex items-center gap-8 pr-8 font-mono text-sm font-medium tracking-wide" style="color: rgba(115, 66, 226, 0.45);">glm-5.2<span style="color: rgb(115, 66, 226);">✦</span></span><span class="flex items-center gap-8 pr-8 font-mono text-sm font-medium tracking-wide" style="color: rgb(61, 42, 107);">USD payouts<span style="color: rgb(115, 66, 226);">✦</span></span><span class="flex items-center gap-8 pr-8 font-mono text-sm font-medium tracking-wide" style="color: rgba(115, 66, 226, 0.45);">Autopilot pricing<span style="color: rgb(115, 66, 226);">✦</span></span><span class="flex items-center gap-8 pr-8 font-mono text-sm font-medium tracking-wide" style="color: rgb(61, 42, 107);">Encrypted listings<span style="color: rgb(115, 66, 226);">✦</span></span><span class="flex items-center gap-8 pr-8 font-mono text-sm font-medium tracking-wide" style="color: rgba(115, 66, 226, 0.45);">No custody of keys<span style="color: rgb(115, 66, 226);">✦</span></span><span class="flex items-center gap-8 pr-8 font-mono text-sm font-medium tracking-wide" style="color: rgb(61, 42, 107);">glm-5.3<span style="color: rgb(115, 66, 226);">✦</span></span><span class="flex items-center gap-8 pr-8 font-mono text-sm font-medium tracking-wide" style="color: rgba(115, 66, 226, 0.45);">claude-opus-5<span style="color: rgb(115, 66, 226);">✦</span></span><span class="flex items-center gap-8 pr-8 font-mono text-sm font-medium tracking-wide" style="color: rgb(61, 42, 107);">gpt-5.6-sol<span style="color: rgb(115, 66, 226);">✦</span></span><span class="flex items-center gap-8 pr-8 font-mono text-sm font-medium tracking-wide" style="color: rgba(115, 66, 226, 0.45);">kimi-k3<span style="color: rgb(115, 66, 226);">✦</span></span><span class="flex items-center gap-8 pr-8 font-mono text-sm font-medium tracking-wide" style="color: rgb(61, 42, 107);">claude-fable-5<span style="color: rgb(115, 66, 226);">✦</span></span><span class="flex items-center gap-8 pr-8 font-mono text-sm font-medium tracking-wide" style="color: rgba(115, 66, 226, 0.45);">glm-5.1<span style="color: rgb(115, 66, 226);">✦</span></span><span class="flex items-center gap-8 pr-8 font-mono text-sm font-medium tracking-wide" style="color: rgb(61, 42, 107);">gpt-6-astra<span style="color: rgb(115, 66, 226);">✦</span></span><span class="flex items-center gap-8 pr-8 font-mono text-sm font-medium tracking-wide" style="color: rgba(115, 66, 226, 0.45);">glm-5.2<span style="color: rgb(115, 66, 226);">✦</span></span><span class="flex items-center gap-8 pr-8 font-mono text-sm font-medium tracking-wide" style="color: rgb(61, 42, 107);">USD payouts<span style="color: rgb(115, 66, 226);">✦</span></span><span class="flex items-center gap-8 pr-8 font-mono text-sm font-medium tracking-wide" style="color: rgba(115, 66, 226, 0.45);">Autopilot pricing<span style="color: rgb(115, 66, 226);">✦</span></span><span class="flex items-center gap-8 pr-8 font-mono text-sm font-medium tracking-wide" style="color: rgb(61, 42, 107);">Encrypted listings<span style="color: rgb(115, 66, 226);">✦</span></span><span class="flex items-center gap-8 pr-8 font-mono text-sm font-medium tracking-wide" style="color: rgba(115, 66, 226, 0.45);">No custody of keys<span style="color: rgb(115, 66, 226);">✦</span></span></div></section><div class="pin-spacer" style="order: 0; place-self: auto; grid-area: auto; z-index: auto; float: none; flex-shrink: 1; display: flex; margin: 0px; inset: 0px; position: relative; flex-basis: auto; overflow: visible; box-sizing: border-box; width: 1920px; height: 1728px; padding: 0px 0px 648px;"><section id="market" class="relative flex min-h-screen items-center overflow-hidden" style="background: linear-gradient(rgb(245, 245, 241) 0%, rgb(237, 236, 230) 55%, rgb(232, 231, 225) 100%); translate: none; rotate: none; scale: none; inset: 0px auto auto 0px; margin: 0px; max-width: 1920px; width: 1920px; max-height: 1080px; height: 1080px; padding: 0px;"><div class="pointer-events-none absolute inset-0 opacity-40" style="background-image: linear-gradient(rgba(25, 40, 55, 0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(25, 40, 55, 0.06) 1px, transparent 1px); background-size: 56px 56px;"></div><div class="pointer-events-none absolute inset-0" style="background: radial-gradient(1200px 500px at 20% 0%, rgba(155, 107, 255, 0.06), transparent 60%), radial-gradient(1000px 500px at 85% 100%, rgba(42, 157, 143, 0.07), transparent 60%);"></div><div data-models-watermark="true" class="pointer-events-none absolute inset-0 flex items-center justify-center" style="translate: none; rotate: none; scale: none; transform: translate(0%, -14%);"><span class="select-none font-bold tracking-tight" style="font-family: var(--font-heading); font-size: clamp(6rem, 24vw, 20rem); letter-spacing: -0.04em; color: rgba(255, 255, 255, 0.6); line-height: 1;">MARKET</span></div><div class="pointer-events-none absolute rounded-full will-change-transform top-0 left-[-12rem]" data-models-orb="true" style="width: 420px; height: 420px; background: radial-gradient(circle, rgba(42, 157, 143, 0.14), rgba(42, 157, 143, 0.02) 60%, transparent 70%); filter: blur(6px); translate: none; rotate: none; scale: none; transform: translate(0%, -18%) translate3d(4.3729px, 2.1722px, 0px) rotate(0.5793deg);"></div><div class="pointer-events-none absolute rounded-full will-change-transform bottom-[-6rem] right-[-10rem]" data-models-orb-2="true" style="width: 360px; height: 360px; background: radial-gradient(circle, rgba(155, 107, 255, 0.16), rgba(115, 66, 226, 0.03) 60%, transparent 70%); filter: blur(6px); translate: none; rotate: none; scale: none; transform: translate(0%, 20%) translate3d(16.8383px, 4.6591px, 0px) rotate(0.9318deg);"></div><div data-model-chip="true" class="pointer-events-none absolute top-[16%] right-[8%] hidden rounded-full border border-[rgba(115,66,226,0.25)] bg-white/70 px-4 py-2 font-mono text-sm text-[#7342E2] backdrop-blur-sm lg:block" style="box-shadow: rgba(115, 66, 226, 0.12) 0px 4px 16px; translate: none; rotate: none; scale: none; transform: translate3d(0px, -0.7268px, 0px);">glm-5.3</div><div data-model-chip="true" class="pointer-events-none absolute top-[30%] left-[6%] hidden rounded-full border border-[rgba(42,157,143,0.25)] bg-white/70 px-4 py-2 font-mono text-sm text-[#1f6f63] backdrop-blur-sm lg:block" style="box-shadow: rgba(42, 157, 143, 0.12) 0px 4px 16px; translate: none; rotate: none; scale: none; transform: translate3d(0px, -0.0058px, 0px);">claude-opus-5</div><div data-model-chip="true" class="pointer-events-none absolute right-[12%] bottom-[22%] hidden rounded-full border border-[rgba(25,40,55,0.18)] bg-white/70 px-4 py-2 font-mono text-sm text-[#192837] backdrop-blur-sm lg:block" style="box-shadow: rgba(25, 40, 55, 0.1) 0px 4px 16px; translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">gpt-5.6-sol</div><div data-model-chip="true" class="pointer-events-none absolute bottom-[30%] left-[10%] hidden rounded-full border border-[rgba(115,66,226,0.2)] bg-white/70 px-4 py-2 font-mono text-xs text-[#7342E2] backdrop-blur-sm lg:block" style="box-shadow: rgba(115, 66, 226, 0.1) 0px 4px 16px; translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">kimi-k3</div><div data-model-chip="true" class="pointer-events-none absolute top-[46%] right-[16%] hidden rounded-full border border-[rgba(115,66,226,0.2)] bg-white/70 px-4 py-2 font-mono text-xs text-[#5a33b8] backdrop-blur-sm lg:block" style="box-shadow: rgba(115, 66, 226, 0.1) 0px 4px 16px; translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">claude-fable-5</div><div data-model-chip="true" class="pointer-events-none absolute top-[22%] left-[18%] hidden rounded-full border border-[rgba(42,157,143,0.2)] bg-white/70 px-4 py-2 font-mono text-xs text-[#1f6f63] backdrop-blur-sm lg:block" style="box-shadow: rgba(42, 157, 143, 0.1) 0px 4px 16px; translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">earning USD</div><div data-model-bubble="true" class="pointer-events-none absolute top-[12%] left-[30%] hidden h-3 w-3 rounded-full lg:block" style="background: linear-gradient(135deg, rgb(155, 107, 255), rgb(115, 66, 226)); box-shadow: rgba(115, 66, 226, 0.3) 0px 2px 8px; translate: none; rotate: none; scale: none; transform: translate3d(0px, -19.6007px, 0px) scale(1.147, 1.147);"></div><div data-model-bubble="true" class="pointer-events-none absolute top-[38%] left-[4%] hidden h-2 w-2 rounded-full lg:block" style="background: rgba(42, 157, 143, 0.7); box-shadow: rgba(42, 157, 143, 0.25) 0px 2px 8px; translate: none; rotate: none; scale: none; transform: translate3d(0px, -18.6824px, 0px) scale(1.1401, 1.1401);"></div><div data-model-bubble="true" class="pointer-events-none absolute top-[58%] right-[4%] hidden h-2.5 w-2.5 rounded-full lg:block" style="background: linear-gradient(135deg, rgb(155, 107, 255), rgb(77, 224, 192)); box-shadow: rgba(115, 66, 226, 0.25) 0px 2px 8px; translate: none; rotate: none; scale: none; transform: translate3d(0px, -17.2843px, 0px) scale(1.1296, 1.1296);"></div><div data-model-bubble="true" class="pointer-events-none absolute right-[24%] bottom-[14%] hidden h-3.5 w-3.5 rounded-full lg:block" style="background: rgba(115, 66, 226, 0.5); box-shadow: rgba(115, 66, 226, 0.3) 0px 2px 10px; translate: none; rotate: none; scale: none; transform: translate3d(0px, -15.4837px, 0px) scale(1.1161, 1.1161);"></div><div data-model-bubble="true" class="pointer-events-none absolute bottom-[16%] left-[24%] hidden h-2 w-2 rounded-full lg:block" style="background: rgba(155, 107, 255, 0.6); box-shadow: rgba(155, 107, 255, 0.3) 0px 2px 8px; translate: none; rotate: none; scale: none; transform: translate3d(0px, -13.38px, 0px) scale(1.1003, 1.1003);"></div><div data-model-bubble="true" class="pointer-events-none absolute top-[70%] left-[12%] hidden h-3 w-3 rounded-full lg:block" style="background: rgba(42, 157, 143, 0.5); box-shadow: rgba(42, 157, 143, 0.25) 0px 2px 8px; translate: none; rotate: none; scale: none; transform: translate3d(0px, -11.0895px, 0px) scale(1.0832, 1.0832);"></div><div data-model-bubble="true" class="pointer-events-none absolute top-[24%] right-[30%] hidden h-2.5 w-2.5 rounded-full lg:block" style="background: linear-gradient(135deg, rgba(155, 107, 255, 0.8), rgba(42, 157, 143, 0.6)); box-shadow: rgba(115, 66, 226, 0.2) 0px 2px 8px; translate: none; rotate: none; scale: none; transform: translate3d(0px, -8.7389px, 0px) scale(1.0655, 1.0655);"></div><div class="relative mx-auto w-full max-w-[1280px] px-5 sm:px-8"><div data-models-card="true" class="rounded-3xl p-8 sm:p-12" style="background: rgb(255, 255, 255); box-shadow: rgba(25, 40, 55, 0.1) 0px 16px 48px; translate: none; rotate: none; scale: none; transform-origin: 50% 50%; opacity: 0.4187; visibility: inherit; transform: translate(8.138%, 0%) translate3d(0px, 0px, 0px) rotate(0.6975deg) scale(0.9651, 0.9651);"><div class="mb-8 flex flex-wrap items-end justify-between gap-4"><div><span class="mb-4 inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold tracking-wide uppercase" style="background: rgba(115, 66, 226, 0.12); color: rgb(115, 66, 226);"><span class="inline-block h-1.5 w-1.5 rounded-full" style="background: linear-gradient(90deg, rgb(115, 66, 226), rgb(155, 107, 255));"></span>What's paying</span><h2 class="max-w-[560px]" style="font-family: var(--font-heading); font-size: clamp(1.5rem, 4vw, 2.25rem); line-height: 1.1; letter-spacing: -0.02em; color: rgb(25, 40, 55);">Live model demand. <span class="inline-block" style="background-image: linear-gradient(90deg, rgb(115, 66, 226) 0%, rgb(155, 107, 255) 20%, rgb(77, 224, 192) 40%, rgb(42, 157, 143) 60%, rgb(244, 162, 97) 80%, rgb(155, 107, 255) 100%); background-size: 250% 100%; background-position: 53.1918% 50%; background-clip: text; color: transparent;">See what buyers are using.</span></h2></div><a href="#" class="group inline-flex items-center gap-1.5 font-semibold transition-opacity hover:opacity-60" style="color: rgb(115, 66, 226);">Explore the market<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></div><div class="overflow-x-auto"><table class="w-full min-w-[640px] border-collapse text-left text-sm"><thead><tr class="border-b border-[rgba(25,40,55,0.1)]"><th class="px-3 py-3 text-xs font-semibold tracking-wide uppercase opacity-50 first:pl-5">Model</th><th class="px-3 py-3 text-xs font-semibold tracking-wide uppercase opacity-50 first:pl-5">Wins at / 1M</th><th class="px-3 py-3 text-xs font-semibold tracking-wide uppercase opacity-50 first:pl-5">24h volume</th><th class="px-3 py-3 text-xs font-semibold tracking-wide uppercase opacity-50 first:pl-5">Est. payout</th></tr></thead><tbody><tr data-market-row="true" class="border-b border-[rgba(25,40,55,0.06)] last:border-0" style="translate: none; rotate: none; scale: none; opacity: 0; visibility: hidden; transform: translate(0px, 26px);"><td class="px-3 py-3.5 pl-5"><span class="flex items-center gap-2 font-mono font-medium text-[#192837]">glm-5.3<span class="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-semibold" style="background: rgba(42, 157, 143, 0.12); color: rgb(31, 111, 99);"><span class="h-1 w-1 rounded-full" style="background: rgb(42, 157, 143);"></span>161 live</span></span></td><td class="px-3 py-3.5 opacity-80">$0.0093 / $0.029</td><td class="px-3 py-3.5 font-medium text-[#192837]">$578.46</td><td class="px-3 py-3.5"><span class="font-mono text-xs font-semibold" style="color: rgb(42, 157, 143);">USD</span></td></tr><tr data-market-row="true" class="border-b border-[rgba(25,40,55,0.06)] last:border-0" style="translate: none; rotate: none; scale: none; opacity: 0; visibility: hidden; transform: translate(0px, 26px);"><td class="px-3 py-3.5 pl-5"><span class="flex items-center gap-2 font-mono font-medium text-[#192837]">claude-opus-5<span class="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-semibold" style="background: rgba(42, 157, 143, 0.12); color: rgb(31, 111, 99);"><span class="h-1 w-1 rounded-full" style="background: rgb(42, 157, 143);"></span>240 live</span></span></td><td class="px-3 py-3.5 opacity-80">$0.287 / $1.44</td><td class="px-3 py-3.5 font-medium text-[#192837]">$266.63</td><td class="px-3 py-3.5"><span class="font-mono text-xs font-semibold" style="color: rgb(42, 157, 143);">USD</span></td></tr><tr data-market-row="true" class="border-b border-[rgba(25,40,55,0.06)] last:border-0" style="translate: none; rotate: none; scale: none; opacity: 0; visibility: hidden; transform: translate(0px, 26px);"><td class="px-3 py-3.5 pl-5"><span class="flex items-center gap-2 font-mono font-medium text-[#192837]">gpt-5.6-sol<span class="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-semibold" style="background: rgba(42, 157, 143, 0.12); color: rgb(31, 111, 99);"><span class="h-1 w-1 rounded-full" style="background: rgb(42, 157, 143);"></span>481 live</span></span></td><td class="px-3 py-3.5 opacity-80">$0.020 / $0.100</td><td class="px-3 py-3.5 font-medium text-[#192837]">$181.65</td><td class="px-3 py-3.5"><span class="font-mono text-xs font-semibold" style="color: rgb(42, 157, 143);">USD</span></td></tr><tr data-market-row="true" class="border-b border-[rgba(25,40,55,0.06)] last:border-0" style="translate: none; rotate: none; scale: none; opacity: 0; visibility: hidden; transform: translate(0px, 26px);"><td class="px-3 py-3.5 pl-5"><span class="flex items-center gap-2 font-mono font-medium text-[#192837]">kimi-k3<span class="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-semibold" style="background: rgba(42, 157, 143, 0.12); color: rgb(31, 111, 99);"><span class="h-1 w-1 rounded-full" style="background: rgb(42, 157, 143);"></span>799 live</span></span></td><td class="px-3 py-3.5 opacity-80">$0.030 / $0.148</td><td class="px-3 py-3.5 font-medium text-[#192837]">$162.59</td><td class="px-3 py-3.5"><span class="font-mono text-xs font-semibold" style="color: rgb(42, 157, 143);">USD</span></td></tr></tbody></table></div><div data-model-meta="true" class="mt-6 flex flex-wrap items-center gap-5"><span class="inline-flex items-center gap-2 text-sm opacity-70" style="translate: none; rotate: none; scale: none; opacity: 0; visibility: hidden; transform: translate(0px, 16px);"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7342E2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gauge" aria-hidden="true"><path d="m12 14 4-4"></path><path d="M3.34 19a10 10 0 1 1 17.32 0"></path></svg>Priced to win demand, never below your minimum</span><span class="inline-flex items-center gap-2 text-sm opacity-70" style="translate: none; rotate: none; scale: none; opacity: 0; visibility: hidden; transform: translate(0px, 16px);"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7342E2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>Keys encrypted per listing · never kept on file</span></div></div></div></section></div><section class="relative overflow-hidden bg-[#F2F2EE] py-20 sm:py-28"><div class="relative mx-auto max-w-[1280px] px-5 sm:px-8"><div class="max-w-[720px]" data-how-heading="true" style="translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);"><span class="mb-4 inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold tracking-wide uppercase" style="background: rgba(115, 66, 226, 0.12); color: rgb(115, 66, 226);"><span class="inline-block h-1.5 w-1.5 rounded-full" style="background: linear-gradient(90deg, rgb(115, 66, 226), rgb(155, 107, 255));"></span>How it works</span><h2 class="mb-4" style="font-family: var(--font-heading); font-size: clamp(1.5rem, 4vw, 2.25rem); line-height: 1.1; letter-spacing: -0.02em; color: rgb(25, 40, 55);">From idle key to income in <span class="inline-block" style="background-image: linear-gradient(90deg, rgb(115, 66, 226) 0%, rgb(155, 107, 255) 20%, rgb(77, 224, 192) 40%, rgb(42, 157, 143) 60%, rgb(244, 162, 97) 80%, rgb(155, 107, 255) 100%); background-size: 250% 100%; background-position: 53.1918% 50%; background-clip: text; color: transparent;">three steps.</span></h2></div><div class="mt-12 grid grid-cols-1 gap-5 md:grid-cols-3"><article data-how-step="true" class="relative overflow-hidden rounded-2xl bg-white p-7 transition-shadow duration-300 hover:shadow-[0_20px_50px_rgba(25,40,55,0.12)]" style="box-shadow: rgba(25, 40, 55, 0.06) 0px 8px 32px; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);"><span class="pointer-events-none absolute -top-3 right-3 font-bold tracking-tight opacity-[0.06]" style="font-family: var(--font-heading); font-size: clamp(3.5rem, 6vw, 5rem); color: rgb(25, 40, 55);">01</span><div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl" style="background: rgba(115, 66, 226, 0.1);"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7342E2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-key-round" aria-hidden="true"><path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z"></path><circle cx="16.5" cy="7.5" r=".5" fill="currentColor"></circle></svg></div><h3 class="mb-2 font-semibold" style="font-size: clamp(1rem, 2vw, 1.15rem);">Connect a key</h3><p class="leading-relaxed opacity-70" style="font-size: clamp(0.88rem, 2vw, 0.95rem);">TokenSea probes it to confirm it works. We never keep a copy of your key.</p></article><article data-how-step="true" class="relative overflow-hidden rounded-2xl bg-white p-7 transition-shadow duration-300 hover:shadow-[0_20px_50px_rgba(25,40,55,0.12)]" style="box-shadow: rgba(25, 40, 55, 0.06) 0px 8px 32px; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);"><span class="pointer-events-none absolute -top-3 right-3 font-bold tracking-tight opacity-[0.06]" style="font-family: var(--font-heading); font-size: clamp(3.5rem, 6vw, 5rem); color: rgb(25, 40, 55);">02</span><div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl" style="background: rgba(115, 66, 226, 0.1);"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7342E2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gauge" aria-hidden="true"><path d="m12 14 4-4"></path><path d="M3.34 19a10 10 0 1 1 17.32 0"></path></svg></div><h3 class="mb-2 font-semibold" style="font-size: clamp(1rem, 2vw, 1.15rem);">Autopilot pricing</h3><p class="leading-relaxed opacity-70" style="font-size: clamp(0.88rem, 2vw, 0.95rem);">We price your listing to win demand. Set a minimum only if you want one — Autopilot never goes below it.</p></article><article data-how-step="true" class="relative overflow-hidden rounded-2xl bg-white p-7 transition-shadow duration-300 hover:shadow-[0_20px_50px_rgba(25,40,55,0.12)]" style="box-shadow: rgba(25, 40, 55, 0.06) 0px 8px 32px; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);"><span class="pointer-events-none absolute -top-3 right-3 font-bold tracking-tight opacity-[0.06]" style="font-family: var(--font-heading); font-size: clamp(3.5rem, 6vw, 5rem); color: rgb(25, 40, 55);">03</span><div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl" style="background: rgba(115, 66, 226, 0.1);"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7342E2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wallet" aria-hidden="true"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"></path><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"></path></svg></div><h3 class="mb-2 font-semibold" style="font-size: clamp(1rem, 2vw, 1.15rem);">Paid automatically</h3><p class="leading-relaxed opacity-70" style="font-size: clamp(0.88rem, 2vw, 0.95rem);">Earn per request. TokenSea batches USD to your wallet at $5 or after 72 hours, then you cash out.</p></article></div><div data-how-payout="true" class="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 rounded-2xl border border-[rgba(25,40,55,0.08)] bg-white/60 px-6 py-5 backdrop-blur-sm" style="translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);"><span class="text-xs font-semibold tracking-wide uppercase opacity-50">Cash out to</span><span class="text-sm font-semibold opacity-70 transition-opacity hover:opacity-100" style="color: rgb(25, 40, 55);">Revolut</span><span class="text-sm font-semibold opacity-70 transition-opacity hover:opacity-100" style="color: rgb(25, 40, 55);">Monzo</span><span class="text-sm font-semibold opacity-70 transition-opacity hover:opacity-100" style="color: rgb(25, 40, 55);">Chime</span><span class="text-sm font-semibold opacity-70 transition-opacity hover:opacity-100" style="color: rgb(25, 40, 55);">Zelle</span><span class="text-sm font-semibold opacity-70 transition-opacity hover:opacity-100" style="color: rgb(25, 40, 55);">Venmo</span><span class="text-sm font-semibold opacity-70 transition-opacity hover:opacity-100" style="color: rgb(25, 40, 55);">Cash App</span><span class="text-sm font-semibold opacity-70 transition-opacity hover:opacity-100" style="color: rgb(25, 40, 55);">Wise</span><span class="text-sm font-semibold opacity-70 transition-opacity hover:opacity-100" style="color: rgb(25, 40, 55);">PayPal</span></div></div></section><section class="relative overflow-hidden bg-[#F2F2EE] py-20 sm:py-28"><div class="relative mx-auto max-w-[1280px] px-5 sm:px-8"><div data-cta-content="true" style="translate: none; rotate: none; scale: none; transform: translate(0%, 14%);"><div data-cta-banner="true" class="relative flex flex-col items-start justify-between gap-8 overflow-hidden rounded-3xl border border-[rgba(115,66,226,0.15)] p-8 sm:p-12 md:flex-row md:items-center" style="background: linear-gradient(135deg, rgb(244, 238, 255) 0%, rgb(235, 226, 255) 45%, rgb(246, 242, 255) 100%); box-shadow: rgba(115, 66, 226, 0.12) 0px 16px 48px; translate: none; rotate: none; scale: none; transform-origin: 608px 124.672px; opacity: 1; visibility: inherit; transform: translate(0px, 0px);"><div data-cta-glow="true" class="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full" style="background: radial-gradient(circle, rgba(155, 107, 255, 0.3), rgba(115, 66, 226, 0.08) 60%, transparent 70%); filter: blur(10px); translate: none; rotate: none; scale: none; opacity: 0.9468; transform: translate3d(0px, 0px, 0px) scale(1.0798, 1.0798);"></div><div class="pointer-events-none absolute -bottom-28 -left-24 h-72 w-72 rounded-full" style="background: radial-gradient(circle, rgba(42, 157, 143, 0.12), rgba(42, 157, 143, 0.03) 60%, transparent 70%); filter: blur(10px);"></div><div class="relative"><span class="mb-4 inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold tracking-wide uppercase" style="background: rgba(255, 255, 255, 0.7); color: rgb(115, 66, 226); border: 1px solid rgba(115, 66, 226, 0.2);"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles will-change-transform" aria-hidden="true" data-cta-sparkle="true" style="translate: none; rotate: none; scale: none; transform: translate3d(0px, 0px, 0px) rotate(226.83deg);"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg>Start selling</span><h2 class="mb-3" style="font-family: var(--font-heading); font-size: clamp(1.5rem, 4vw, 2.25rem); line-height: 1.1; letter-spacing: -0.02em; color: rgb(25, 40, 55);">Turn idle AI capacity into <span class="inline-block" style="background-image: linear-gradient(90deg, rgb(115, 66, 226) 0%, rgb(155, 107, 255) 20%, rgb(77, 224, 192) 40%, rgb(42, 157, 143) 60%, rgb(244, 162, 97) 80%, rgb(155, 107, 255) 100%); background-size: 250% 100%; background-position: 53.1918% 50%; background-clip: text; color: transparent;">income.</span></h2><p class="max-w-[460px] opacity-75" style="font-size: clamp(0.9rem, 2vw, 1.05rem); line-height: 1.6; color: rgb(25, 40, 55);">Connect a key in minutes, let Autopilot price your listing, and start earning USD the moment buyers use your models.</p></div><div class="relative flex flex-wrap items-center gap-4"><a href="#" class="flex items-center justify-center gap-2 font-semibold text-white transition-transform duration-300 hover:scale-105 active:scale-95" style="background: rgb(115, 66, 226); border-radius: 50px; padding: 17px 24px; font-size: clamp(0.9rem, 2vw, 1rem); box-shadow: rgba(115, 66, 226, 0.28) 0px 4px 24px;">Start selling<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a><a href="#" class="inline-flex items-center justify-center gap-2 font-semibold text-[#192837] transition-transform duration-300 hover:scale-105 active:scale-95" style="background: rgb(255, 255, 255); border-radius: 50px; padding: 17px 24px; font-size: clamp(0.9rem, 2vw, 1rem); box-shadow: rgba(25, 40, 55, 0.06) 0px 2px 12px;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open" aria-hidden="true"><path d="M12 5v16"></path><path d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z"></path></svg>Read the docs</a></div></div></div></div></section><footer class="relative bg-[#F2F2EE] pb-16"><div class="mx-auto max-w-[1280px] px-5 sm:px-8"><div class="mb-10 h-px w-full bg-[rgba(25,40,55,0.12)]"></div><div class="grid grid-cols-2 gap-8 md:grid-cols-4"><div data-footer-col="true" class="col-span-2 md:col-span-1" style="translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);"><div class="mb-4 flex items-center gap-2.5"><img alt="TokenSea logo" width="32" height="32" class="h-auto object-contain" src="http://localhost:5199/src/assets/logo.png" style="width: 32px;"><span class="text-lg tracking-tight" style="font-family: var(--font-heading); color: rgb(25, 40, 55);">TokenSea</span></div><p class="text-sm leading-relaxed opacity-60">Sell your spare AI tokens for cash.</p></div><div data-footer-col="true" style="translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);"><span class="mb-4 block text-xs font-semibold tracking-wide uppercase opacity-50">Market</span><ul class="space-y-2.5"><li><a class="text-sm opacity-80 transition-opacity hover:opacity-50" href="/#market" data-discover="true">What's paying</a></li><li><a class="text-sm opacity-80 transition-opacity hover:opacity-50" href="/pricing" data-discover="true">Model prices</a></li><li><a class="text-sm opacity-80 transition-opacity hover:opacity-50" href="/account" data-discover="true">Sell your credits</a></li></ul></div><div data-footer-col="true" style="translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);"><span class="mb-4 block text-xs font-semibold tracking-wide uppercase opacity-50">Resources</span><ul class="space-y-2.5"><li><a class="text-sm opacity-80 transition-opacity hover:opacity-50" href="/docs" data-discover="true">How it works</a></li><li><a class="text-sm opacity-80 transition-opacity hover:opacity-50" href="/pricing" data-discover="true">Payouts</a></li><li><a class="text-sm opacity-80 transition-opacity hover:opacity-50" href="/lookup" data-discover="true">Support</a></li></ul></div><div data-footer-col="true" style="translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);"><span class="mb-4 block text-xs font-semibold tracking-wide uppercase opacity-50">Contact</span><ul class="space-y-2.5"><li><a class="text-sm opacity-80 transition-opacity hover:opacity-50" href="mailto:hello@tokensea.world">hello@tokensea.world</a></li></ul></div></div></div></footer></main></div>
+    <script type="module" src="/src/main.tsx"></script>
+  
+
+
+</body>
+</html>
