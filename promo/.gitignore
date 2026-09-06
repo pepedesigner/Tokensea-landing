@@ -7,5 +7,11 @@
 # Renders (final MP4 is committed at ../media/tokensea-promo.mp4)
 renders
 
+# Site-capture intermediate artifacts (web preview screenshots are committed as assets/*.png)
+capture
+
+# One-off capture scripts (kept locally, not in the repo)
+*.mjs
+
 # Local tooling
 .DS_Store
