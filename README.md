@@ -1,12 +1,10 @@
 # TokenSea — Sell spare AI tokens for cash
 
-<p align="center">
-  <video src="media/tokensea-promo.mp4" width="720" autoplay loop muted playsinline></video>
-</p>
+[![TokenSea promo — sell spare AI tokens for cash](media/promo-poster.png)](media/tokensea-promo.mp4)
 
 <p align="center">
-  <b>List unused AI API credits or included capacity.</b><br />
-  Earn USD per request when buyers use your models — then cash out to the accounts you already use.
+  <b>▶ Click the poster to play the 30s promo · List unused AI API credits or
+  included capacity, earn USD per request, and cash out anywhere.</b>
 </p>
 
 ---
