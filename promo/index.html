@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1920, height=1080">
+    <title>TokenSea — Sell spare AI tokens for cash</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #f2f2ee;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        color: #192837;
+        -webkit-font-smoothing: antialiased;
+      }
+      #root {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #f2f2ee;
+      }
+      .clip {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+      }
+      /* ---- ambient background texture (BG.mp4, very faint) ---- */
+      #ambient-video {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1920px;
+        height: 1080px;
+        object-fit: cover;
+        opacity: 0.05;
+      }
+      #ambient-tint {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse 70% 60% at 50% 42%,
+          rgba(115, 66, 226, 0.1),
+          transparent 70%
+        );
+      }
+
+      /* ---- shared scene chrome ---- */
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        padding: 14px 28px;
+        border-radius: 999px;
+        font-size: 26px;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+      }
+      .pill-dot {
+        width: 14px;
+        height: 14px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #7342e2, #9b6bff);
+      }
+      .big-title {
+        font-size: 96px;
+        font-weight: 800;
+        line-height: 1.05;
+        letter-spacing: -0.025em;
+        color: #192837;
+      }
+      .big-title .grad {
+        background-image: linear-gradient(90deg, #7342e2, #9b6bff 45%, #4de0c0 90%);
+        background-size: 250% 100%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .sub {
+        font-size: 36px;
+        font-weight: 500;
+        line-height: 1.5;
+        color: #192837;
+        opacity: 0.75;
+      }
+      .white-card {
+        background: #ffffff;
+        border-radius: 28px;
+        box-shadow: 0 18px 50px rgba(25, 40, 55, 0.1);
+      }
+      .section-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 14px;
+        padding: 12px 26px;
+        border-radius: 999px;
+        background: rgba(115, 66, 226, 0.12);
+        color: #7342e2;
+        font-size: 24px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      /* ============ SCENE 0 — hero (0.0–5.5) ============ */
+      #scene0 {
+        background: linear-gradient(135deg, #f8f5ff 0%, #f2f2ee 60%, #eef7f4 100%);
+        display: flex;
+        align-items: center;
+      }
+      #s0-inner {
+        margin-left: 170px;
+        width: 1260px;
+      }
+      #s0-logo {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+        margin-bottom: 42px;
+      }
+      #s0-logo img {
+        width: 76px;
+        height: 76px;
+        object-fit: contain;
+      }
+      #s0-logo span {
+        font-size: 40px;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        color: #192837;
+      }
+      #s0-pill {
+        margin-bottom: 34px;
+      }
+      #s0-h1 {
+        margin-bottom: 30px;
+        width: 1180px;
+      }
+      #s0-h1 .line {
+        display: block;
+        overflow: hidden;
+        padding: 0.06em 0 0.16em;
+        margin-bottom: -0.16em;
+        line-height: 1.02;
+      }
+      #s0-sub {
+        width: 980px;
+      }
+      #s0-sub b {
+        font-weight: 700;
+        color: #192837;
+        opacity: 1;
+      }
+      /* hero stat chips row */
+      #s0-chips {
+        display: flex;
+        gap: 18px;
+        margin-top: 48px;
+      }
+      .chip {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 16px 26px;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.72);
+        border: 1px solid rgba(25, 40, 55, 0.1);
+        backdrop-filter: blur(6px);
+      }
+      .chip .v {
+        font-size: 30px;
+        font-weight: 800;
+        color: #7342e2;
+        font-variant-numeric: tabular-nums;
+      }
+      .chip .k {
+        font-size: 22px;
+        font-weight: 500;
+        color: #192837;
+        opacity: 0.7;
+      }
+
+      /* ============ SCENE 1 — market (5.5–11.0) ============ */
+      #scene1 {
+        background: linear-gradient(180deg, #f5f5f1 0%, #ecebe5 100%);
+        display: flex;
+        align-items: center;
+      }
+      #s1-inner {
+        width: 1560px;
+        margin: 0 auto;
+      }
+      #s1-head {
+        margin-bottom: 44px;
+      }
+      #s1-h {
+        margin-top: 26px;
+        font-size: 72px;
+        font-weight: 800;
+        line-height: 1.08;
+        letter-spacing: -0.02em;
+      }
+      #s1-h .grad {
+        background-image: linear-gradient(90deg, #7342e2, #9b6bff);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      #s1-stats {
+        display: flex;
+        gap: 26px;
+      }
+      .stat {
+        flex: 1;
+        padding: 40px 38px;
+        background: #ffffff;
+        border-radius: 26px;
+        box-shadow: 0 14px 44px rgba(25, 40, 55, 0.08);
+      }
+      .stat .icon {
+        width: 56px;
+        height: 56px;
+        border-radius: 16px;
+        background: rgba(115, 66, 226, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+        margin-bottom: 24px;
+      }
+      .stat .num {
+        font-size: 72px;
+        font-weight: 800;
+        color: #192837;
+        font-variant-numeric: tabular-nums;
+        letter-spacing: -0.02em;
+      }
+      .stat .num.teal {
+        color: #1f6f63;
+      }
+      .stat .k {
+        margin-top: 8px;
+        font-size: 26px;
+        font-weight: 500;
+        opacity: 0.65;
+      }
+      .stat .usd {
+        display: inline-block;
+        margin-left: 10px;
+        font-size: 24px;
+        font-weight: 700;
+        vertical-align: middle;
+        color: #1f6f63;
+      }
+
+      /* ============ SCENE 2 — how it works (11.0–18.5) ============ */
+      #scene2 {
+        background: linear-gradient(150deg, #f4eeff 0%, #f2f2ee 45%, #eef7f4 100%);
+        display: flex;
+        align-items: center;
+      }
+      #s2-inner {
+        width: 1560px;
+        margin: 0 auto;
+      }
+      #s2-head {
+        margin-bottom: 52px;
+      }
+      #s2-h {
+        margin-top: 26px;
+        font-size: 72px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+      }
+      #s2-steps {
+        display: flex;
+        gap: 30px;
+      }
+      .step {
+        flex: 1;
+        background: #ffffff;
+        border-radius: 30px;
+        padding: 44px 40px;
+        box-shadow: 0 16px 46px rgba(25, 40, 55, 0.09);
+        position: relative;
+        overflow: hidden;
+      }
+      .step .num-bg {
+        position: absolute;
+        top: 44px;
+        right: 28px;
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        color: #7342e2;
+        background: rgba(115, 66, 226, 0.1);
+        border-radius: 999px;
+        padding: 10px 20px;
+        line-height: 1;
+      }
+      .step .step-icon {
+        width: 68px;
+        height: 68px;
+        border-radius: 20px;
+        background: rgba(115, 66, 226, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 32px;
+        margin-bottom: 26px;
+        font-weight: 700;
+        color: #7342e2;
+      }
+      .step .step-icon.teal {
+        background: rgba(42, 157, 143, 0.12);
+        color: #1f6f63;
+      }
+      .step h3 {
+        font-size: 38px;
+        font-weight: 800;
+        letter-spacing: -0.01em;
+        margin-bottom: 14px;
+        color: #192837;
+      }
+      .step p {
+        font-size: 25px;
+        line-height: 1.5;
+        opacity: 0.72;
+      }
+      .step p b {
+        color: #7342e2;
+        opacity: 1;
+      }
+
+      /* ============ SCENE 3 — payout (18.5–25.0) ============ */
+      #scene3 {
+        background: linear-gradient(200deg, #192837 0%, #223548 100%);
+        display: flex;
+        align-items: center;
+        color: #fff;
+      }
+      #s3-inner {
+        width: 1560px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      #s3-label {
+        background: rgba(255, 255, 255, 0.08);
+        color: #cfc8ff;
+      }
+      #s3-h {
+        margin: 32px 0 18px;
+        font-size: 78px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        line-height: 1.08;
+      }
+      #s3-h .grad {
+        background-image: linear-gradient(90deg, #9b6bff, #4de0c0);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      #s3-sub {
+        font-size: 32px;
+        opacity: 0.75;
+        font-weight: 400;
+        margin-bottom: 54px;
+      }
+      #s3-platforms {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 18px;
+        width: 1380px;
+        margin: 0 auto 52px;
+      }
+      .plat {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        padding: 18px 30px;
+        border-radius: 18px;
+        font-size: 27px;
+        font-weight: 600;
+        letter-spacing: 0.01em;
+        color: #fff;
+      }
+      #s3-zero {
+        display: inline-flex;
+        align-items: center;
+        gap: 16px;
+        padding: 20px 36px;
+        border-radius: 999px;
+        background: rgba(42, 157, 143, 0.16);
+        border: 1px solid rgba(77, 224, 192, 0.3);
+        font-size: 28px;
+        font-weight: 600;
+        color: #7deed3;
+      }
+
+      /* ============ SCENE 4 — CTA (25.0–30.0) ============ */
+      #scene4 {
+        background: linear-gradient(160deg, #5a33b8 0%, #7342e2 55%, #8f5ff0 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #fff;
+      }
+      #s4-h {
+        font-size: 110px;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        line-height: 1.04;
+        margin-bottom: 22px;
+      }
+      #s4-sub {
+        font-size: 38px;
+        font-weight: 500;
+        opacity: 0.85;
+        margin-bottom: 56px;
+      }
+      #s4-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 18px;
+        background: #ffffff;
+        color: #7342e2;
+        font-size: 34px;
+        font-weight: 800;
+        padding: 26px 60px;
+        border-radius: 999px;
+        box-shadow: 0 20px 60px rgba(25, 20, 60, 0.4);
+      }
+      #s4-domain {
+        margin-top: 34px;
+        font-size: 26px;
+        font-weight: 500;
+        opacity: 0.7;
+        letter-spacing: 0.02em;
+      }
+
+      /* scene fade overlays */
+      .wipe {
+        position: absolute;
+        inset: 0;
+        background: #f2f2ee;
+        transform-origin: right center;
+      }
+    </style>
+  </head>
+  <body>
+    <div data-hf-id="hf-j7pz" id="root" data-composition-id="main" data-start="0" data-duration="30" data-width="1920" data-height="1080">
+      <!-- ambient: faint looping brand video under everything -->
+      <video data-hf-id="hf-k4j8" id="ambient-video" src="assets/BG.mp4" data-start="0" data-duration="30" muted playsinline></video>
+      <div data-hf-id="hf-yjwd" id="ambient-tint" class="clip" data-start="0" data-duration="30"></div>
+
+      <!-- ============ SCENE 0 — hero ============ -->
+      <section data-hf-id="hf-gcfp" id="scene0" class="clip" data-start="0" data-duration="5.8">
+        <div data-hf-id="hf-7d2f" id="s0-inner">
+          <div data-hf-id="hf-4524" id="s0-logo">
+            <img data-hf-id="hf-jhwq" src="assets/logo.png" alt="TokenSea">
+            <span data-hf-id="hf-6se5">TokenSea</span>
+          </div>
+          <div data-hf-id="hf-st9b" id="s0-pill" class="pill" style="background: rgba(255,255,255,0.7); color:#7342e2; border:1px solid rgba(115,66,226,0.25); box-shadow: 0 6px 24px rgba(25,40,55,0.06);">
+            <span data-hf-id="hf-5k6y" class="pill-dot"></span>
+            AI surplus marketplace
+          </div>
+          <div data-hf-id="hf-ak6c" id="s0-h1" class="big-title">
+            <span data-hf-id="hf-tvfm" class="line" data-layout-allow-overflow="">Sell your spare AI tokens</span>
+            <span data-hf-id="hf-4hyt" class="line" data-layout-allow-overflow="">for <span data-hf-id="hf-vflc" class="grad">cash.</span></span>
+          </div>
+          <div data-hf-id="hf-ycp1" id="s0-sub" class="sub">
+            List unused AI API credits or included capacity. Earn
+            <b data-hf-id="hf-mzed">USD per request</b>, then cash out to the accounts you already use.
+          </div>
+          <div data-hf-id="hf-ssdu" id="s0-chips">
+            <div data-hf-id="hf-sqmm" class="chip">
+              <span data-hf-id="hf-82m5" class="v" id="chip-reqs">1.4M</span>
+              <span data-hf-id="hf-d6rp" class="k">requests / 24h</span>
+            </div>
+            <div data-hf-id="hf-gk42" class="chip">
+              <span data-hf-id="hf-kijc" class="v teal">$2,867</span>
+              <span data-hf-id="hf-c7i5" class="k">paid out / 24h</span>
+            </div>
+            <div data-hf-id="hf-gyf3" class="chip">
+              <span data-hf-id="hf-h4a9" class="v">396</span>
+              <span data-hf-id="hf-3n4v" class="k">models listed</span>
+            </div>
+          </div>
+        </div>
+        <div data-hf-id="hf-7blk" id="s0-wipe" class="wipe" style="background:#f2f2ee;"></div>
+      </section>
+
+      <!-- ============ SCENE 1 — market ============ -->
+      <section data-hf-id="hf-upoi" id="scene1" class="clip" data-start="5.2" data-duration="6">
+        <div data-hf-id="hf-kfwi" id="s1-inner">
+          <div data-hf-id="hf-ihdk" id="s1-head">
+            <span data-hf-id="hf-c606" id="s1-label" class="section-label">
+              <span data-hf-id="hf-y6n2" class="pill-dot"></span>
+              What's paying
+            </span>
+            <div data-hf-id="hf-ykw5" id="s1-h">
+              Your idle capacity is
+              <span data-hf-id="hf-6wmd" class="grad">real money.</span>
+            </div>
+          </div>
+          <div data-hf-id="hf-u5rz" id="s1-stats">
+            <div data-hf-id="hf-9rhj" class="stat" id="stat1">
+              <div data-hf-id="hf-c744" class="icon">📦</div>
+              <div data-hf-id="hf-yeow">
+                <span data-hf-id="hf-qe2d" class="num" id="stat1-num">0</span>
+                <span data-hf-id="hf-n2wp" class="usd">models</span>
+              </div>
+              <div data-hf-id="hf-zjll" class="k">live on the market right now</div>
+            </div>
+            <div data-hf-id="hf-yvzw" class="stat" id="stat2">
+              <div data-hf-id="hf-ov9y" class="icon">⚡</div>
+              <div data-hf-id="hf-y7yw">
+                <span data-hf-id="hf-hg58" class="num teal" id="stat2-num">$0</span>
+                <span data-hf-id="hf-17fl" class="usd">paid out</span>
+              </div>
+              <div data-hf-id="hf-0suc" class="k">to sellers in the last 24h</div>
+            </div>
+            <div data-hf-id="hf-znnp" class="stat" id="stat3">
+              <div data-hf-id="hf-0way" class="icon">🔄</div>
+              <div data-hf-id="hf-x11t">
+                <span data-hf-id="hf-16rj" class="num" id="stat3-num">0</span>
+                <span data-hf-id="hf-nrpp" class="usd">requests</span>
+              </div>
+              <div data-hf-id="hf-r393" class="k">served through the market / 24h</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SCENE 2 — how it works ============ -->
+      <section data-hf-id="hf-p92i" id="scene2" class="clip" data-start="10.6" data-duration="7.2">
+        <div data-hf-id="hf-7thp" id="s2-inner">
+          <div data-hf-id="hf-f9ll" id="s2-head">
+            <span data-hf-id="hf-lm8a" id="s2-label" class="section-label">
+              <span data-hf-id="hf-yky3" class="pill-dot"></span>
+              How it works
+            </span>
+            <div data-hf-id="hf-xfj6" id="s2-h">Idle to income in <span data-hf-id="hf-vbue" class="grad">three steps.</span></div>
+          </div>
+          <div data-hf-id="hf-tsdo" id="s2-steps">
+            <div data-hf-id="hf-x1l3" class="step" id="step1">
+              <span data-hf-id="hf-zlna" class="num-bg">STEP 01</span>
+              <div data-hf-id="hf-1lzu" class="step-icon">🔑</div>
+              <h3 data-hf-id="hf-305a">Connect a key</h3>
+              <p data-hf-id="hf-od0b">
+                Link an API key or provider with unused credits. It's
+                <b data-hf-id="hf-6o7s">encrypted per listing</b> — never kept on file.
+              </p>
+            </div>
+            <div data-hf-id="hf-m63g" class="step" id="step2">
+              <span data-hf-id="hf-zzyb" class="num-bg">STEP 02</span>
+              <div data-hf-id="hf-to3t" class="step-icon">🎯</div>
+              <h3 data-hf-id="hf-n3yt">Autopilot pricing</h3>
+              <p data-hf-id="hf-yt4i">
+                We price your listing to <b data-hf-id="hf-n2s8">win demand</b>. Set a minimum — it
+                never goes below it.
+              </p>
+            </div>
+            <div data-hf-id="hf-mxr9" class="step" id="step3">
+              <span data-hf-id="hf-0e9c" class="num-bg">STEP 03</span>
+              <div data-hf-id="hf-bjwv" class="step-icon teal">💸</div>
+              <h3 data-hf-id="hf-ngv7">Paid automatically</h3>
+              <p data-hf-id="hf-hxkq">
+                Earn per request. USD batches to your wallet at
+                <b data-hf-id="hf-giky">$5</b> or after <b data-hf-id="hf-2w3w">72h</b>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SCENE 3 — payout ============ -->
+      <section data-hf-id="hf-0ua4" id="scene3" class="clip" data-start="17.2" data-duration="7">
+        <div data-hf-id="hf-fly8" id="s3-inner">
+          <span data-hf-id="hf-90hp" id="s3-label" class="section-label">Cash out</span>
+          <div data-hf-id="hf-gqsh" id="s3-h">Money lands where <span data-hf-id="hf-ys4o" class="grad">you already are.</span></div>
+          <div data-hf-id="hf-oexb" id="s3-sub">Instant payouts to the apps you use every day</div>
+          <div data-hf-id="hf-353c" id="s3-platforms">
+            <div data-hf-id="hf-widq" class="plat">Revolut</div>
+            <div data-hf-id="hf-zupo" class="plat">Monzo</div>
+            <div data-hf-id="hf-hf4t" class="plat">Chime</div>
+            <div data-hf-id="hf-aq71" class="plat">Zelle</div>
+            <div data-hf-id="hf-klbs" class="plat">Venmo</div>
+            <div data-hf-id="hf-uq1v" class="plat">Cash App</div>
+            <div data-hf-id="hf-pkar" class="plat">Wise</div>
+            <div data-hf-id="hf-t4ss" class="plat">PayPal</div>
+          </div>
+          <div data-hf-id="hf-1zfh" id="s3-zero">✓ 0% TokenSea fees to sell · send costs 0.5%</div>
+        </div>
+      </section>
+
+      <!-- ============ SCENE 4 — CTA ============ -->
+      <section data-hf-id="hf-jkll" id="scene4" class="clip" data-start="23.6" data-duration="6.4">
+        <div data-hf-id="hf-xfcu">
+          <div data-hf-id="hf-n5so" id="s4-h">Ready to earn?</div>
+          <div data-hf-id="hf-vbw5" id="s4-sub">Your spare AI tokens shouldn't sit idle.</div>
+          <div data-hf-id="hf-bc4f" id="s4-btn">Start selling →</div>
+          <div data-hf-id="hf-tb7z" id="s4-domain">tokensea.world</div>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      window.__timelines["main"] = tl;
+
+      // ---------- helpers ----------
+      const easeOut = "power3.out";
+      const easeInOut = "power2.inOut";
+
+      // count-up helper (deterministic, seek-safe: driven by onUpdate on the tween)
+      // mode: "int" → locale thousands; "usd" → $ + thousands; "millions" → 1.4M style
+      function countTo(target, from, to, at, dur, mode) {
+        const obj = { v: from };
+        tl.to(
+          obj,
+          {
+            v: to,
+            duration: dur,
+            ease: "power2.out",
+            onUpdate: function () {
+              const v = obj.v;
+              if (mode === "usd") {
+                target.textContent = "$" + Math.round(v).toLocaleString("en-US");
+              } else if (mode === "millions") {
+                target.textContent =
+                  (v / 1000000).toFixed(1).replace(/\.0$/, "") + "M";
+              } else {
+                target.textContent = Math.round(v).toLocaleString("en-US");
+              }
+            },
+          },
+          at
+        );
+      }
+
+      // ============================================================
+      // Timeline. Scene clips overlap slightly; each scene is gated by
+      // its clip window (hard hide outside) and faded by GSAP inside it.
+      // Clip windows (from DOM): s0 0–5.8 · s1 5.2–11.2 · s2 10.6–17.8
+      //                            s3 17.2–24.2 · s4 23.6–30
+      // ============================================================
+      gsap.set(["#scene1", "#scene2", "#scene3", "#scene4"], { autoAlpha: 0 });
+
+      // ---------- SCENE 0 (0 → 5.8) ----------
+      gsap.set("#s0-wipe", { scaleX: 1 });
+      tl.to("#s0-wipe", { scaleX: 0, duration: 0.7, ease: easeInOut }, 0.15);
+
+      tl.from("#s0-logo", { y: -24, autoAlpha: 0, duration: 0.6, ease: easeOut }, 0.5);
+      tl.from("#s0-pill", { y: 20, autoAlpha: 0, duration: 0.5, ease: easeOut }, 0.8);
+      tl.from("#s0-h1 .line", { yPercent: 110, autoAlpha: 0, duration: 0.7, stagger: 0.14, ease: "power4.out" }, 1.0);
+      tl.from("#s0-sub", { y: 26, autoAlpha: 0, duration: 0.6, ease: easeOut }, 1.7);
+      tl.from(".chip", { y: 24, autoAlpha: 0, duration: 0.5, stagger: 0.1, ease: easeOut }, 2.1);
+
+      // hold hero, then fade out before clip ends (clip ends 5.8)
+      tl.to("#scene0", { autoAlpha: 0, duration: 0.4, ease: easeInOut }, 5.3);
+
+      // ---------- SCENE 1 (5.2 → 11.2) ----------
+      tl.to("#scene1", { autoAlpha: 1, duration: 0.35, ease: easeInOut }, 5.35);
+      tl.from("#s1-label", { y: 24, autoAlpha: 0, duration: 0.5, ease: easeOut }, 5.6);
+      tl.from("#s1-h", { y: 36, autoAlpha: 0, duration: 0.6, ease: easeOut }, 5.8);
+      tl.from(".stat", { y: 44, autoAlpha: 0, scale: 0.94, duration: 0.55, stagger: 0.12, ease: easeOut }, 6.3);
+
+      // count-ups (start after cards land)
+      countTo(document.getElementById("stat1-num"), 0, 396, 7.0, 1.0, "int");
+      countTo(document.getElementById("stat2-num"), 0, 2867, 7.0, 1.2, "usd");
+      countTo(document.getElementById("stat3-num"), 0, 1400000, 7.0, 1.2, "millions");
+
+      tl.to("#scene1", { autoAlpha: 0, duration: 0.4, ease: easeInOut }, 10.7);
+
+      // ---------- SCENE 2 (10.6 → 17.8) ----------
+      tl.to("#scene2", { autoAlpha: 1, duration: 0.35, ease: easeInOut }, 10.75);
+      tl.from("#s2-label", { y: 24, autoAlpha: 0, duration: 0.5, ease: easeOut }, 11.0);
+      tl.from("#s2-h", { y: 36, autoAlpha: 0, duration: 0.6, ease: easeOut }, 11.2);
+      tl.from(".step", { y: 60, autoAlpha: 0, scale: 0.95, duration: 0.6, stagger: 0.16, ease: easeOut }, 11.8);
+
+      // inside each step: number badge + icon float in
+      tl.from(".step .num-bg", { scale: 0.6, autoAlpha: 0, duration: 0.5, stagger: 0.16, ease: easeOut }, 12.2);
+      tl.from(".step-icon", { scale: 0.4, autoAlpha: 0, duration: 0.4, stagger: 0.16, ease: "back.out(1.6)" }, 12.4);
+
+      tl.to("#scene2", { autoAlpha: 0, duration: 0.4, ease: easeInOut }, 17.3);
+
+      // ---------- SCENE 3 (17.2 → 24.2) ----------
+      tl.to("#scene3", { autoAlpha: 1, duration: 0.35, ease: easeInOut }, 17.35);
+      tl.from("#s3-label", { y: 24, autoAlpha: 0, duration: 0.5, ease: easeOut }, 17.6);
+      tl.from("#s3-h", { y: 36, autoAlpha: 0, duration: 0.6, ease: easeOut }, 17.8);
+      tl.from("#s3-sub", { y: 20, autoAlpha: 0, duration: 0.5, ease: easeOut }, 18.2);
+      tl.from(".plat", { y: 30, autoAlpha: 0, scale: 0.9, duration: 0.4, stagger: 0.07, ease: easeOut }, 18.6);
+      tl.from("#s3-zero", { y: 26, autoAlpha: 0, duration: 0.55, ease: easeOut }, 21.1);
+
+      tl.to("#scene3", { autoAlpha: 0, duration: 0.4, ease: easeInOut }, 23.7);
+
+      // ---------- SCENE 4 (23.6 → 30) ----------
+      tl.to("#scene4", { autoAlpha: 1, duration: 0.35, ease: easeInOut }, 23.75);
+      tl.from("#s4-h", { scale: 1.15, autoAlpha: 0, y: -20, duration: 0.6, ease: easeOut }, 24.0);
+      tl.from("#s4-sub", { y: 24, autoAlpha: 0, duration: 0.5, ease: easeOut }, 24.6);
+      tl.from("#s4-btn", { y: 30, autoAlpha: 0, scale: 0.92, duration: 0.55, ease: "back.out(1.5)" }, 25.1);
+      tl.from("#s4-domain", { autoAlpha: 0, duration: 0.4 }, 25.9);
+
+      // breathing glow on CTA button until the end
+      tl.to("#s4-btn", { y: -6, duration: 0.7, ease: "sine.inOut", yoyo: true, repeat: 3 }, 26.5);
+    </script>
+  </body>
+</html>

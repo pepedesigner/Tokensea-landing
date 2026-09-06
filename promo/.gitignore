@@ -1,0 +1,11 @@
+# HyperFrames caches & intermediate render output
+.thumbnails
+.media
+.hyperframes
+.transcode-cache
+
+# Renders (final MP4 is committed at ../media/tokensea-promo.mp4)
+renders
+
+# Local tooling
+.DS_Store
