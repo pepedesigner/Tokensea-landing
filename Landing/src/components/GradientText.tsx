@@ -3,7 +3,7 @@ import { gsap, useGSAP } from '../lib/gsap'
 
 export default function GradientText({
   children,
-  colors = ['#2a231c', '#3f7311', '#c9ff3f'],
+  colors = ['#c9ff3f', '#26540c', '#c9ff3f'],
   duration = 3,
   ...rest
 }: {
@@ -40,7 +40,7 @@ export default function GradientText({
       className="inline-block"
       style={{
         backgroundImage: `linear-gradient(90deg, ${stops})`,
-        backgroundSize: '180% 100%',
+        backgroundSize: '200% 100%',
         backgroundPosition: '0% 50%',
         backgroundClip: 'text',
         WebkitBackgroundClip: 'text',
