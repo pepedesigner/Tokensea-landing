@@ -1,6 +1,6 @@
-# TokenSea — Landing
+# io.run — Landing
 
-The marketing site and seller console for TokenSea. This directory is the app
+The marketing site and seller console for io.run. This directory is the app
 root; see the [root README](../README.md) for the project overview, the design
 system and deployment notes.
 

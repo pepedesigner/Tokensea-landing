@@ -6,7 +6,7 @@ import Button from '../components/ui/Button'
 import Card from '../components/ui/Card'
 
 const FAQS = [
-  { q: 'How do I list my spare AI capacity?', a: 'Go to Dashboard → My listings, connect an AI API key or provider account, and TokenSea probes it before Autopilot prices your listing live.' },
+  { q: 'How do I list my spare AI capacity?', a: 'Go to Dashboard → My listings, connect an AI API key or provider account, and io.run probes it before Autopilot prices your listing live.' },
   { q: 'When does USD batch to my wallet?', a: 'Earnings batch at $5 of accrued earnings or after 72 hours, whichever comes first.' },
   { q: 'Is my key safe?', a: 'Yes. Keys are encrypted per listing and only used to serve requests on your listing. We never keep a copy on file.' },
   { q: 'How do I cash out?', a: 'Connect a payout account in Dashboard → Withdraw. Revolut, Monzo, Chime and Zelle pay immediately; Venmo, Cash App, Wise and PayPal pay after a one-time Verify on desktop Chrome.' },
@@ -15,7 +15,7 @@ const FAQS = [
 const WHY = [
   { icon: Wallet, text: 'Earnings settled as USD, never held in custody' },
   { icon: ShieldCheck, text: 'Encrypted listings and keys' },
-  { icon: KeyRound, text: 'Seller support at hello@tokensea.world' },
+  { icon: KeyRound, text: 'Seller support at hello@io.run' },
 ]
 
 const SECTION_HEADING: CSSProperties = {
@@ -62,7 +62,7 @@ export default function Lookup() {
             eyebrow="Seller support"
             title="Look Up a Batch or"
             accent="Payout"
-            description="Enter a payout or batch reference to check the status of your TokenSea earnings."
+            description="Enter a payout or batch reference to check the status of your io.run earnings."
           />
 
           <div className="flex items-center gap-2 border border-black/10 bg-white p-2">
@@ -79,7 +79,7 @@ export default function Lookup() {
           </div>
 
           <p className="mt-4 font-mono text-[11px] tracking-wider text-ink-3 uppercase">
-            References look like TS-BATCH-XXXXXXXX.
+            References look like IO-BATCH-XXXXXXXX.
           </p>
         </div>
 
@@ -103,7 +103,7 @@ export default function Lookup() {
 
           <div>
             <h2 className="mb-6 font-bold text-ink" style={SECTION_HEADING}>
-              Why sell on TokenSea?
+              Why sell on io.run?
             </h2>
             <div className="flex flex-col gap-4">
               {WHY.map((w) => (
@@ -120,7 +120,7 @@ export default function Lookup() {
                 </Card>
               ))}
               <a
-                href="mailto:hello@tokensea.world"
+                href="mailto:hello@io.run"
                 className="block"
               >
                 <Card hover className="p-6">
@@ -129,7 +129,7 @@ export default function Lookup() {
                       <Mail size={22} className="text-ink" />
                     </div>
                     <span className="flex items-center gap-2 font-semibold text-ink">
-                      hello@tokensea.world
+                      hello@io.run
                     </span>
                   </div>
                 </Card>

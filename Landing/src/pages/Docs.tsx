@@ -8,7 +8,7 @@ import Card from '../components/ui/Card'
 const STEPS = [
   {
     step: 'Step 1. Connect a key',
-    body: 'Create an account on TokenSea with any email, then connect an AI API key or a provider account that has unused credits or included capacity. TokenSea probes it to confirm it works — we never keep a copy.',
+    body: 'Create an account on io.run with any email, then connect an AI API key or a provider account that has unused credits or included capacity. io.run probes it to confirm it works — we never keep a copy.',
   },
   {
     step: 'Step 2. Autopilot prices it',
@@ -16,14 +16,14 @@ const STEPS = [
   },
   {
     step: 'Step 3. Get paid per request',
-    body: 'When a buyer uses your model, you earn in USD. TokenSea batches earnings to your wallet at $5 or after 72 hours, then you cash out to the payment account you choose.',
+    body: 'When a buyer uses your model, you earn in USD. io.run batches earnings to your wallet at $5 or after 72 hours, then you cash out to the payment account you choose.',
   },
 ]
 
 const FAQS = [
-  { q: 'Who holds my key?', a: 'TokenSea holds it, encrypted per listing, and only for as long as your listing is live. We never keep a copy on file.' },
-  { q: 'Where does the money go?', a: 'TokenSea batches earnings to your wallet at $5 or after 72 hours. We never take custody of your funds.' },
-  { q: 'What does it cost?', a: 'Selling and cashing out have no TokenSea fees. Sending money out costs 0.5% of the amount you enter; the recipient receives the rest.' },
+  { q: 'Who holds my key?', a: 'io.run holds it, encrypted per listing, and only for as long as your listing is live. We never keep a copy on file.' },
+  { q: 'Where does the money go?', a: 'io.run batches earnings to your wallet at $5 or after 72 hours. We never take custody of your funds.' },
+  { q: 'What does it cost?', a: 'Selling and cashing out have no io.run fees. Sending money out costs 0.5% of the amount you enter; the recipient receives the rest.' },
   { q: 'Which payouts are supported?', a: 'Revolut, Monzo, Chime and Zelle pay out immediately. Venmo, Cash App, Wise and PayPal pay out after a one-time Verify on desktop Chrome.' },
   { q: 'Can I set a minimum price?', a: 'Yes, it is optional. Autopilot may price higher when the market permits, but never lower than your minimum.' },
   { q: 'Selling prepaid balance?', a: 'Prepaid API credits and included subscription capacity can both be listed. Check the current market to see what is paying before you list.' },
@@ -85,7 +85,7 @@ export default function Docs() {
             eyebrow="Seller guide"
             title="Sell your spare AI capacity"
             accent="in minutes."
-            description="TokenSea connects unused AI API credits and included capacity with buyers who want them. Here is how listing, pricing, and payouts work."
+            description="io.run connects unused AI API credits and included capacity with buyers who want them. Here is how listing, pricing, and payouts work."
           >
             <div className="mt-6 flex flex-wrap items-center gap-4">
               <Button to="/account" variant="accent" size="lg">
@@ -123,7 +123,7 @@ export default function Docs() {
                 <HelpCircle size={13} /> Need help?
               </span>
               <p className="text-sm leading-relaxed text-ink-2">
-                Sellers get support at hello@tokensea.world.
+                Sellers get support at hello@io.run.
               </p>
             </Card>
           </aside>
@@ -164,7 +164,7 @@ export default function Docs() {
                   Selling
                 </span>
                 <p className="mt-1 text-sm text-ink-2">
-                  No TokenSea fees to list or sell. You keep what the market pays for your model.
+                  No io.run fees to list or sell. You keep what the market pays for your model.
                 </p>
               </Card>
               <Card className="p-5">

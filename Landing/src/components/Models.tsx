@@ -167,7 +167,7 @@ export default function Models() {
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            'radial-gradient(1200px 500px at 20% 0%, rgba(208,170,119,0.08), transparent 60%), radial-gradient(1000px 500px at 85% 100%, rgba(201,255,63,0.08), transparent 60%)',
+            'radial-gradient(1200px 500px at 20% 0%, rgba(255,210,54,0.08), transparent 60%), radial-gradient(1000px 500px at 85% 100%, rgba(201,255,63,0.08), transparent 60%)',
         }}
       />
 
@@ -208,7 +208,7 @@ export default function Models() {
         className="right-[-10rem] bottom-[-6rem]"
         style={{
           background:
-            'radial-gradient(circle at 50% 50%, rgba(208,170,119,0.18), rgba(208,170,119,0.03) 60%, transparent 70%)',
+            'radial-gradient(circle at 50% 50%, rgba(255,210,54,0.18), rgba(255,210,54,0.03) 60%, transparent 70%)',
           filter: 'blur(6px)',
         }}
       />

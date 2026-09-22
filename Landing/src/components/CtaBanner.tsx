@@ -83,7 +83,7 @@ export default function CtaBanner() {
               className="rounded-keep pointer-events-none absolute -bottom-28 -left-24 h-72 w-72"
               style={{
                 background:
-                  'radial-gradient(circle, rgba(208,170,119,0.25), rgba(208,170,119,0.04) 60%, transparent 70%)',
+                  'radial-gradient(circle, rgba(255,210,54,0.25), rgba(255,210,54,0.04) 60%, transparent 70%)',
                 filter: 'blur(10px)',
               }}
             />

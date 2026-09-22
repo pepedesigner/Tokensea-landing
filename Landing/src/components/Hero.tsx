@@ -165,7 +165,7 @@ export default function Hero() {
         className="top-1/2 left-[-10rem]"
         style={{
           background:
-            'radial-gradient(circle at 60% 40%, rgba(208,170,119,0.2), rgba(208,170,119,0.03) 60%, transparent 70%)',
+            'radial-gradient(circle at 60% 40%, rgba(255,210,54,0.2), rgba(255,210,54,0.03) 60%, transparent 70%)',
           filter: 'blur(6px)',
         }}
       />
@@ -219,7 +219,7 @@ export default function Hero() {
                   '0 1px 2px rgba(250,248,244,0.85), 0 0 12px rgba(250,248,244,0.65)',
               }}
             >
-              List unused AI API credits or included capacity on the TokenSea
+              List unused AI API credits or included capacity on the io.run
               market. Earn USD when buyers use your models, then cash out to
               Revolut, Zelle, PayPal, and more.
             </p>

@@ -3,7 +3,7 @@ import { gsap, useGSAP } from '../lib/gsap'
 
 export default function GradientText({
   children,
-  colors = ['#c9ff3f', '#26540c', '#c9ff3f'],
+  colors = ['#a16207', '#4d7c0f', '#65a30d', '#a16207'],
   duration = 3,
   ...rest
 }: {

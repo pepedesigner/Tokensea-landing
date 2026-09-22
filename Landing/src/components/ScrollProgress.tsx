@@ -30,7 +30,7 @@ export default function ScrollProgress() {
       ref={ref}
       className="fixed top-0 left-0 z-[60] h-[3px] w-full origin-left will-change-transform"
       style={{
-        background: 'linear-gradient(90deg, #26540c, #3f7311, #c9ff3f)',
+        background: 'linear-gradient(90deg, #ffd236, #b8f22e, #c9ff3f)',
       }}
     />
   )

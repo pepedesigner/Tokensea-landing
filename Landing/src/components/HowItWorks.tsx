@@ -10,7 +10,7 @@ const STEPS = [
     icon: KeyRound,
     step: '01',
     title: 'Connect a key',
-    body: 'TokenSea probes it to confirm it works. We never keep a copy of your key.',
+    body: 'io.run probes it to confirm it works. We never keep a copy of your key.',
   },
   {
     icon: Gauge,
@@ -22,7 +22,7 @@ const STEPS = [
     icon: Wallet,
     step: '03',
     title: 'Paid automatically',
-    body: 'Earn per request. TokenSea batches USD to your wallet at $5 or after 72 hours, then you cash out.',
+    body: 'Earn per request. io.run batches USD to your wallet at $5 or after 72 hours, then you cash out.',
   },
 ]
 

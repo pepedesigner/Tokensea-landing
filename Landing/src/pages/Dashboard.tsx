@@ -80,7 +80,7 @@ function WithdrawRow({ label, value, note }: { label: string; value: string; not
 
 const STEP_ILLUSTRATIONS = [
   { step: '1', body: 'Connect an AI API key or provider account with unused capacity.' },
-  { step: '2', body: 'TokenSea probes it and Autopilot prices your listing to win demand.' },
+  { step: '2', body: 'io.run probes it and Autopilot prices your listing to win demand.' },
   { step: '3', body: 'Buyers use your model and you earn USD per request.' },
 ]
 

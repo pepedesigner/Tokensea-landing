@@ -16,12 +16,12 @@ const MARKET_ROWS = [
 ]
 
 const FAQS = [
-  { q: 'Do I need a monthly subscription?', a: 'No. TokenSea is a marketplace. You list spare capacity and earn per request — there is nothing to subscribe to.' },
+  { q: 'Do I need a monthly subscription?', a: 'No. io.run is a marketplace. You list spare capacity and earn per request — there is nothing to subscribe to.' },
   { q: 'Who sets the price for my model?', a: 'Autopilot prices your listing to win demand. You can set an optional minimum it will never go below.' },
-  { q: 'When do I get paid?', a: 'TokenSea batches USD to your wallet at $5 of earnings or after 72 hours, whichever comes first.' },
+  { q: 'When do I get paid?', a: 'io.run batches USD to your wallet at $5 of earnings or after 72 hours, whichever comes first.' },
   { q: 'What fees do sellers pay?', a: 'Listing and selling are free. When you send money out, the send costs 0.5% of the amount; the recipient gets the rest.' },
-  { q: 'What can I sell?', a: 'Unused AI API credits, prepaid balances, or included capacity from provider plans. TokenSea probes a key before it goes live.' },
-  { q: 'Where does my key go?', a: 'TokenSea holds it encrypted per listing for as long as the listing is live. We never keep a copy on file.' },
+  { q: 'What can I sell?', a: 'Unused AI API credits, prepaid balances, or included capacity from provider plans. io.run probes a key before it goes live.' },
+  { q: 'Where does my key go?', a: 'io.run holds it encrypted per listing for as long as the listing is live. We never keep a copy on file.' },
 ]
 
 const PAYOUTS = ['Revolut', 'Monzo', 'Chime', 'Zelle', 'Venmo', 'Cash App', 'Wise', 'PayPal']
@@ -30,12 +30,12 @@ const FEE_CARDS = [
   {
     icon: Percent,
     title: 'Free to list, free to sell.',
-    body: 'TokenSea takes no fee when buyers use your models or when earnings batch to your wallet. You keep the market rate your capacity wins.',
+    body: 'io.run takes no fee when buyers use your models or when earnings batch to your wallet. You keep the market rate your capacity wins.',
   },
   {
     icon: Zap,
     title: 'Sending out costs 0.5%.',
-    body: 'When you cash out, the send costs 0.5% of the amount you enter. The recipient receives the rest — no TokenSea custody in between.',
+    body: 'When you cash out, the send costs 0.5% of the amount you enter. The recipient receives the rest — no io.run custody in between.',
   },
 ]
 
@@ -116,7 +116,7 @@ export default function Pricing() {
             eyebrow="What's paying"
             title="See the market before you"
             accent="list."
-            description="Live demand on the TokenSea market over the last 24 hours. Prices show the range at which listings won requests. Your Autopilot prices your listing to win too — with no TokenSea fees on the way in."
+            description="Live demand on the io.run market over the last 24 hours. Prices show the range at which listings won requests. Your Autopilot prices your listing to win too — with no io.run fees on the way in."
           />
         </div>
 

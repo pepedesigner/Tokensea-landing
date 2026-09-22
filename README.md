@@ -1,18 +1,18 @@
 <p align="center">
-  <img src="Landing/media/logo.png" alt="TokenSea" width="88" />
+  <img src="Landing/src/assets/logo.svg" alt="io.run" width="88" />
 </p>
 
-<h1 align="center">TokenSea</h1>
+<h1 align="center">io.run</h1>
 
 <p align="center"><b>Sell your spare AI tokens for cash.</b></p>
 
 <p align="center">
-  Marketing site and seller console for the TokenSea AI surplus marketplace.
+  Marketing site and seller console for the io.run AI surplus marketplace.
 </p>
 
 <p align="center">
   <a href="Landing/media/tokensea-promo.mp4">
-    <img src="Landing/media/promo-poster.png" alt="TokenSea promo — sell spare AI tokens for cash" width="720" />
+    <img src="Landing/media/promo-poster.png" alt="io.run promo — sell spare AI tokens for cash" width="720" />
   </a>
 </p>
 
@@ -22,15 +22,15 @@
 
 ---
 
-## What is TokenSea?
+## What is io.run?
 
-TokenSea is an **AI surplus marketplace**. Instead of letting prepaid API
+io.run is an **AI surplus marketplace**. Instead of letting prepaid API
 credits or included subscription capacity sit idle, sellers list it on the
 market and earn USD while buyers route their requests through it.
 
 - **Connect a key** — link an AI API key or provider account. It is encrypted
   per listing and never kept on file.
-- **Autopilot pricing** — TokenSea prices your listing to win demand. Set an
+- **Autopilot pricing** — io.run prices your listing to win demand. Set an
   optional minimum; it never goes below it.
 - **Paid automatically** — earn per request. USD batches to your wallet at $5
   or after 72 hours.
@@ -69,7 +69,7 @@ this one locally, and is git-ignored here.
 
 ## Design system
 
-The UI follows the shared TokenSea "Orbio" visual language — the same one the
+The UI follows the shared io.run "Orbio" visual language — the same one the
 Dashboard uses:
 
 - **0px corners everywhere** — square, terminal-like geometry with no rounding

@@ -22,7 +22,7 @@ const FOOTER_COLUMNS = [
   },
   {
     heading: 'Contact',
-    links: [{ label: 'hello@tokensea.world', to: 'mailto:hello@tokensea.world' }],
+    links: [{ label: 'hello@io.run', to: 'mailto:hello@io.run' }],
   },
 ]
 

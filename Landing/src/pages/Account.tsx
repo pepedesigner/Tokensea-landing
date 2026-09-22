@@ -165,7 +165,7 @@ export default function Account() {
               </div>
             ) : (
               <div className="flex flex-col gap-4">
-                <h2 className="mb-1 text-xl font-bold text-ink">Create your TokenSea account</h2>
+                <h2 className="mb-1 text-xl font-bold text-ink">Create your io.run account</h2>
                 <p className="mb-2 text-ink-2" style={{ fontSize: '0.95rem' }}>
                   Start selling spare AI capacity and earn USD per request.
                 </p>

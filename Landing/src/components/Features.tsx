@@ -133,14 +133,14 @@ export default function Features() {
         className="-top-32 right-[-12rem]"
         style={{
           background:
-            'radial-gradient(circle at 40% 40%, rgba(208,170,119,0.18), rgba(208,170,119,0.03) 60%, transparent 70%)',
+            'radial-gradient(circle at 40% 40%, rgba(255,210,54,0.18), rgba(255,210,54,0.03) 60%, transparent 70%)',
           filter: 'blur(6px)',
         }}
       />
 
       <div data-features-content className="relative mx-auto max-w-[1280px] px-5 sm:px-8">
         <div className="max-w-[720px]" data-features-heading>
-          <Badge className="mb-4">Why sell on TokenSea</Badge>
+          <Badge className="mb-4">Why sell on io.run</Badge>
           <h2
             className="mb-12 font-bold text-ink"
             style={{
