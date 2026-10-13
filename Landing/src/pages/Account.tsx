@@ -1,5 +1,5 @@
 import { CheckCircle2, Lock, ArrowRight, KeyRound } from 'lucide-react'
-import { useRef, useState } from 'react'
+import { useRef, useState, type FormEvent } from 'react'
 import { Link } from 'react-router-dom'
 import { gsap, useGSAP } from '../lib/gsap'
 import PageHeader from '../components/PageHeader'
@@ -17,9 +17,34 @@ const CHECKS = [
 
 const MODES = ['Sign in', 'Create account'] as const
 
+const DASHBOARD_BASE_URL =
+  (import.meta.env.VITE_DASHBOARD_URL as string | undefined)?.trim() ||
+  'http://localhost:3000'
+
 export default function Account() {
   const [mode, setMode] = useState<'signin' | 'signup'>('signin')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [name, setName] = useState('')
+  const [submitting, setSubmitting] = useState(false)
   const pageRef = useRef<HTMLDivElement>(null)
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    if (submitting) return
+    setSubmitting(true)
+    localStorage.setItem(
+      'io_run_session',
+      JSON.stringify({
+        name: name.trim(),
+        email: email.trim(),
+        signedInAt: new Date().toISOString(),
+      }),
+    )
+    const redirect = mode === 'signup' ? '/dashboard' : '/admin/dashboard'
+    const target = `${DASHBOARD_BASE_URL}/login?demo=${mode === 'signup' ? 'user' : 'admin'}&redirect=${encodeURIComponent(redirect)}`
+    window.setTimeout(() => window.location.assign(target), 400)
+  }
 
   useGSAP(
     () => {
@@ -134,13 +159,27 @@ export default function Account() {
             />
 
             {mode === 'signin' ? (
-              <div className="flex flex-col gap-4">
+              <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
                 <h2 className="mb-1 text-xl font-bold text-ink">Welcome back</h2>
                 <p className="mb-2 text-ink-2" style={{ fontSize: '0.95rem' }}>
                   Sign in to manage your listings and earnings.
                 </p>
-                <Field label="Email" placeholder="you@example.com" type="email" />
-                <Field label="Password" placeholder="••••••••" type="password" />
+                <Field
+                  label="Email"
+                  placeholder="you@example.com"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+                <Field
+                  label="Password"
+                  placeholder="••••••••"
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
                 <div className="flex justify-end">
                   <Link
                     to="/lookup"
@@ -149,48 +188,70 @@ export default function Account() {
                     Forgot password?
                   </Link>
                 </div>
-                <Button variant="accent" size="lg" className="mt-2">
-                  Sign in
+                <Button variant="accent" size="lg" type="submit" disabled={submitting} className="mt-2">
+                  {submitting ? 'Signing in…' : 'Sign in'}
                   <ArrowRight size={20} />
                 </Button>
                 <p className="text-center text-sm text-ink-2">
                   Don&rsquo;t have an account?{' '}
                   <button
+                    type="button"
                     onClick={() => setMode('signup')}
                     className="font-semibold text-accent-700 hover:text-accent-600"
                   >
                     Create one
                   </button>
                 </p>
-              </div>
+              </form>
             ) : (
-              <div className="flex flex-col gap-4">
+              <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
                 <h2 className="mb-1 text-xl font-bold text-ink">Create your io.run account</h2>
                 <p className="mb-2 text-ink-2" style={{ fontSize: '0.95rem' }}>
                   Start selling spare AI capacity and earn USD per request.
                 </p>
-                <Field label="Display name" placeholder="Ada Lovelace" />
-                <Field label="Email" placeholder="you@example.com" type="email" />
-                <Field label="Password" placeholder="••••••••" type="password" />
-                <Field label="Confirm password" placeholder="••••••••" type="password" />
+                <Field
+                  label="Display name"
+                  placeholder="Ada Lovelace"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  required
+                />
+                <Field
+                  label="Email"
+                  placeholder="you@example.com"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+                <Field
+                  label="Password"
+                  placeholder="••••••••"
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
+                <Field label="Confirm password" placeholder="••••••••" type="password" required />
                 <div className="flex items-center gap-3 border border-black/10 bg-paper-2 px-4 py-3 text-sm">
                   <Lock size={16} className="text-ink-3" />
                   <span className="text-ink-2">Image check and reCAPTCHA verification.</span>
                 </div>
-                <Button variant="accent" size="lg" className="mt-2">
-                  Create account
+                <Button variant="accent" size="lg" type="submit" disabled={submitting} className="mt-2">
+                  {submitting ? 'Creating account…' : 'Create account'}
                   <ArrowRight size={20} />
                 </Button>
                 <p className="text-center text-sm text-ink-2">
                   Already have an account?{' '}
                   <button
+                    type="button"
                     onClick={() => setMode('signin')}
                     className="font-semibold text-accent-700 hover:text-accent-600"
                   >
                     Sign in
                   </button>
                 </p>
-              </div>
+              </form>
             )}
           </Card>
         </div>
