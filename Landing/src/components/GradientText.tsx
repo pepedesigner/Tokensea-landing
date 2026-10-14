@@ -1,9 +1,13 @@
 import { useRef, type ReactNode } from 'react'
 import { gsap, useGSAP } from '../lib/gsap'
+import { ACCENT_GRADIENT_COLORS } from '../lib/gradient'
 
+// One full cycle. The stops are laid out twice across a 200%-wide background so
+// that shifting by one background-position period loops seamlessly in a single
+// direction (no yoyo, no visible seam).
 export default function GradientText({
   children,
-  colors = ['#a16207', '#4d7c0f', '#65a30d', '#a16207'],
+  colors = ACCENT_GRADIENT_COLORS,
   duration = 3,
   ...rest
 }: {
@@ -21,8 +25,7 @@ export default function GradientText({
         {
           backgroundPosition: '100% 50%',
           duration,
-          ease: 'sine.inOut',
-          yoyo: true,
+          ease: 'none',
           repeat: -1,
         },
       )
@@ -30,8 +33,9 @@ export default function GradientText({
     { scope: ref },
   )
 
-  const stops = colors
-    .map((c, i) => `${c} ${(i / (colors.length - 1)) * 100}%`)
+  const cycle = [...colors, ...colors, colors[0]]
+  const stops = cycle
+    .map((c, i) => `${c} ${(i / (cycle.length - 1)) * 100}%`)
     .join(', ')
 
   return (
