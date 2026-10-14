@@ -1,14 +1,13 @@
 import { useRef, type ReactNode } from 'react'
 import { gsap, useGSAP } from '../lib/gsap'
+import { ACCENT_GRADIENT_COLORS } from '../lib/gradient'
 
 // One full cycle. The stops are laid out twice across a 200%-wide background so
 // that shifting by one background-position period loops seamlessly in a single
 // direction (no yoyo, no visible seam).
-const DEFAULT_COLORS = ['#dc2626', '#ea580c', '#eab308', '#16a34a', '#0891b2', '#2563eb', '#7c3aed']
-
 export default function GradientText({
   children,
-  colors = DEFAULT_COLORS,
+  colors = ACCENT_GRADIENT_COLORS,
   duration = 3,
   ...rest
 }: {

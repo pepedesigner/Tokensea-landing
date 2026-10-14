@@ -1,5 +1,6 @@
 import { useRef } from 'react'
 import { gsap, useGSAP } from '../lib/gsap'
+import { ACCENT_GRADIENT_CSS } from '../lib/gradient'
 
 export default function ScrollProgress() {
   const ref = useRef<HTMLDivElement>(null)
@@ -30,7 +31,7 @@ export default function ScrollProgress() {
       ref={ref}
       className="fixed top-0 left-0 z-[60] h-[3px] w-full origin-left will-change-transform"
       style={{
-        background: 'linear-gradient(90deg, #ffd236, #b8f22e, #c9ff3f)',
+        background: ACCENT_GRADIENT_CSS,
       }}
     />
   )
